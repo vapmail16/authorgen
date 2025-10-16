@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - {{authorName}}</title>
+    <meta name="description" content="Explore the complete collection of books by {{authorName}}">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">{{authorName}}</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                {{#if showBlogs}}
+                <li><a href="blogs.html">Blog</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="author-name animate-on-scroll">My Books</h1>
+                <p class="tagline animate-on-scroll">Discover the stories that define my journey as an author</p>
+                <div class="hero-cta animate-on-scroll">
+                    <a href="#books" class="btn btn-primary btn-lg">Browse Collection</a>
+                    <a href="index.html" class="btn btn-secondary btn-lg">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    {{#if hasBooks}}
+    <section id="books" class="section books-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Complete Collection</h2>
+            </div>
+            <div class="books-grid">
+                {{#each books}}
+                <div class="book-card animate-on-scroll">
+                    <div class="book-content">
+                        <div class="book-cover-wrapper">
+                            {{#if cover}}
+                            <img src="{{cover}}" alt="{{title}}" class="book-cover">
+                            {{else}}
+                            <div class="book-cover-placeholder">{{title}}</div>
+                            {{/if}}
+                        </div>
+                        <div class="book-info">
+                            <h3>{{title}}</h3>
+                            <div class="book-meta">{{publishDate}}</div>
+                            <div class="book-description">{{description}}</div>
+                            <div class="book-buy-links">
+                                <span class="buy-label">Available at:</span>
+                                {{#if buyLinks.0.url}}
+                                <a href="{{buyLinks.0.url}}" class="btn btn-primary btn-sm" target="_blank" rel="noopener">{{buyLinks.0.name}}</a>
+                                {{/if}}
+                                {{#if buyLinks.1.url}}
+                                <a href="{{buyLinks.1.url}}" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">{{buyLinks.1.name}}</a>
+                                {{/if}}
+                                {{#if buyLinks.2.url}}
+                                <a href="{{buyLinks.2.url}}" class="btn btn-primary btn-sm" target="_blank" rel="noopener">{{buyLinks.2.name}}</a>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    {{else}}
+    <section class="section">
+        <div class="container">
+            <div class="about-section">
+                <div class="text-center">
+                    <h2>Coming Soon</h2>
+                    <p>I'm currently working on my first book. Stay tuned for updates!</p>
+                    <a href="contact.html" class="btn btn-primary btn-lg">Get Notified</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Connect With Me</h3>
+                <div class="social-links">
+                    {{#if socialLinks.twitter}}
+                    <a href="{{socialLinks.twitter}}" class="social-link" target="_blank" rel="noopener">🐦</a>
+                    {{/if}}
+                    {{#if socialLinks.facebook}}
+                    <a href="{{socialLinks.facebook}}" class="social-link" target="_blank" rel="noopener">📘</a>
+                    {{/if}}
+                    {{#if socialLinks.instagram}}
+                    <a href="{{socialLinks.instagram}}" class="social-link" target="_blank" rel="noopener">📷</a>
+                    {{/if}}
+                    {{#if socialLinks.linkedin}}
+                    <a href="{{socialLinks.linkedin}}" class="social-link" target="_blank" rel="noopener">💼</a>
+                    {{/if}}
+                    {{#if socialLinks.medium}}
+                    <a href="{{socialLinks.medium}}" class="social-link" target="_blank" rel="noopener">📝</a>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2024 {{authorName}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

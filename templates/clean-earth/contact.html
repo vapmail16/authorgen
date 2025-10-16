@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - {{authorName}}</title>
+    <meta name="description" content="Get in touch with {{authorName}}">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">{{authorName}}</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">About</a>
+                <a href="books.html" class="nav-link">Books</a>
+                <a href="story.html" class="nav-link">My Story</a>
+                {{#if showBlogs}}
+                <a href="blogs.html" class="nav-link">Blog</a>
+                {{/if}}
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title animate-on-scroll">Get In Touch</h1>
+            <p class="page-subtitle animate-on-scroll">I'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container-narrow">
+            <div class="contact-info animate-on-scroll">
+                {{#if contactEmail}}
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg class="icon">
+                            <use href="assets/icons/icons.svg#mail"></use>
+                        </svg>
+                    </div>
+                    <div class="contact-details">
+                        <h3 class="contact-label">Email</h3>
+                        <a href="mailto:{{contactEmail}}" class="contact-link">{{contactEmail}}</a>
+                    </div>
+                </div>
+                {{/if}}
+
+                {{#if location}}
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg class="icon">
+                            <use href="assets/icons/icons.svg#map-pin"></use>
+                        </svg>
+                    </div>
+                    <div class="contact-details">
+                        <h3 class="contact-label">Location</h3>
+                        <p class="contact-text">{{location}}</p>
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+
+            {{#if hasSocial}}
+            <div class="social-section animate-on-scroll">
+                <h2 class="section-title">Connect With Me</h2>
+                <div class="social-links-large">
+                    {{#if social.twitter}}
+                    <a href="https://twitter.com/{{social.twitter}}" class="social-link-large" target="_blank" rel="noopener">
+                        <svg class="social-icon-large">
+                            <use href="assets/icons/icons.svg#twitter"></use>
+                        </svg>
+                        <span class="social-name">Twitter</span>
+                    </a>
+                    {{/if}}
+                    {{#if social.facebook}}
+                    <a href="{{social.facebook}}" class="social-link-large" target="_blank" rel="noopener">
+                        <svg class="social-icon-large">
+                            <use href="assets/icons/icons.svg#facebook"></use>
+                        </svg>
+                        <span class="social-name">Facebook</span>
+                    </a>
+                    {{/if}}
+                    {{#if social.instagram}}
+                    <a href="https://instagram.com/{{social.instagram}}" class="social-link-large" target="_blank" rel="noopener">
+                        <svg class="social-icon-large">
+                            <use href="assets/icons/icons.svg#instagram"></use>
+                        </svg>
+                        <span class="social-name">Instagram</span>
+                    </a>
+                    {{/if}}
+                    {{#if social.linkedin}}
+                    <a href="{{social.linkedin}}" class="social-link-large" target="_blank" rel="noopener">
+                        <svg class="social-icon-large">
+                            <use href="assets/icons/icons.svg#linkedin"></use>
+                        </svg>
+                        <span class="social-name">LinkedIn</span>
+                    </a>
+                    {{/if}}
+                </div>
+            </div>
+            {{/if}}
+
+            <!-- Optional Contact Form -->
+            <div class="contact-form-section animate-on-scroll">
+                <h2 class="section-title">Send a Message</h2>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <p class="form-note">Note: This form requires server-side configuration to work. You can replace it with a mailto link or integrate with a service like Formspree.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-name">{{authorName}}</p>
+                    <p class="footer-tagline">{{tagline}}</p>
+                </div>
+                {{#if hasSocial}}
+                <div class="footer-social">
+                    {{#if social.twitter}}
+                    <a href="https://twitter.com/{{social.twitter}}" class="social-link" target="_blank" rel="noopener" aria-label="Twitter">
+                        <svg class="social-icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
+                    </a>
+                    {{/if}}
+                    {{#if social.facebook}}
+                    <a href="{{social.facebook}}" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg class="social-icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
+                    </a>
+                    {{/if}}
+                    {{#if social.instagram}}
+                    <a href="https://instagram.com/{{social.instagram}}" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg class="social-icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
+                    </a>
+                    {{/if}}
+                    {{#if social.linkedin}}
+                    <a href="{{social.linkedin}}" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg class="social-icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
+                    </a>
+                    {{/if}}
+                </div>
+                {{/if}}
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{currentYear}} {{authorName}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

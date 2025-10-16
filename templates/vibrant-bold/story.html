@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Story - {{authorName}}</title>
+    <meta name="description" content="Discover the personal journey and story behind {{authorName}}">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">{{authorName}}</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                {{#if showBlogs}}
+                <li><a href="blogs.html">Blog</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="author-name animate-on-scroll">My Story</h1>
+                <p class="tagline animate-on-scroll">The journey that shaped my voice and vision</p>
+                <div class="hero-cta animate-on-scroll">
+                    <a href="#story" class="btn btn-primary btn-lg">Read My Story</a>
+                    <a href="contact.html" class="btn btn-secondary btn-lg">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="section">
+        <div class="container">
+            <div class="about-section">
+                <div class="story-content">
+                    {{#if personalStory}}
+                    <div class="story-text">
+                        {{{personalStory}}}
+                    </div>
+                    {{else}}
+                    <div class="story-text">
+                        <h2>The Beginning</h2>
+                        <p>Every author has a story, and mine began with a simple love for words and the worlds they could create. From the moment I first held a book in my hands, I knew that storytelling would be my calling.</p>
+                        
+                        <h3>The Journey</h3>
+                        <p>My path to becoming an author wasn't always straightforward. There were moments of doubt, countless revisions, and the inevitable rejections that every writer faces. But through it all, I held onto the belief that stories have the power to connect us, to inspire us, and to change the world.</p>
+                        
+                        <h3>The Vision</h3>
+                        <p>Today, I continue to write with the same passion that ignited my journey. Each story I tell is a piece of myself, shared with readers who become part of the narrative. Together, we explore the depths of human experience and discover the extraordinary in the ordinary.</p>
+                        
+                        <h3>Looking Forward</h3>
+                        <p>The story continues to unfold with each new project, each new character, and each new reader who joins me on this incredible journey. Thank you for being part of my story.</p>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container">
+            <div class="about-section">
+                <div class="about-content">
+                    <div class="author-photo-wrapper">
+                        {{#if authorPhoto}}
+                        <img src="{{authorPhoto}}" alt="{{authorName}}" class="author-photo">
+                        {{else}}
+                        <div class="author-photo-placeholder">{{authorInitials}}</div>
+                        {{/if}}
+                    </div>
+                    <div class="bio-content">
+                        <h3>About {{authorName}}</h3>
+                        <p>{{bio}}</p>
+                        {{#if extendedBio}}
+                        <p>{{{extendedBio}}}</p>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    {{#if hasHobbies}}
+    <section class="section hobbies-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Beyond Writing</h2>
+            </div>
+            <div class="hobbies-grid">
+                {{#each hobbies}}
+                <div class="hobby-card animate-on-scroll">
+                    <div class="hobby-icon">{{icon}}</div>
+                    <h3>{{name}}</h3>
+                    <p>{{description}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Connect With Me</h3>
+                <div class="social-links">
+                    {{#if socialLinks.twitter}}
+                    <a href="{{socialLinks.twitter}}" class="social-link" target="_blank" rel="noopener">🐦</a>
+                    {{/if}}
+                    {{#if socialLinks.facebook}}
+                    <a href="{{socialLinks.facebook}}" class="social-link" target="_blank" rel="noopener">📘</a>
+                    {{/if}}
+                    {{#if socialLinks.instagram}}
+                    <a href="{{socialLinks.instagram}}" class="social-link" target="_blank" rel="noopener">📷</a>
+                    {{/if}}
+                    {{#if socialLinks.linkedin}}
+                    <a href="{{socialLinks.linkedin}}" class="social-link" target="_blank" rel="noopener">💼</a>
+                    {{/if}}
+                    {{#if socialLinks.medium}}
+                    <a href="{{socialLinks.medium}}" class="social-link" target="_blank" rel="noopener">📝</a>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2024 {{authorName}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

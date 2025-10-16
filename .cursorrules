@@ -1,0 +1,448 @@
+# AUTHORGEN - Author Website Generator Project
+
+## Project Overview
+A static site generator that creates beautiful, modern author websites from CSV data and predefined templates. Each generated site is completely self-contained and deployable.
+
+## Core Architecture
+
+### 1. Data Flow
+```
+CSV Data → Parser → Data Transformer → Template Engine → Static HTML/CSS/JS → Generated Site
+```
+
+### 2. Key Components
+
+#### generator.js (Main Script)
+- **parseCSV()**: Reads and parses CSV files
+- **transformAuthorData()**: Converts CSV rows into structured data objects
+- **generateSite()**: Orchestrates the entire generation process
+- **renderTemplate()**: Custom Handlebars-like template engine
+- **copyAssets()**: Copies template assets and user images to generated site
+
+#### Template Engine (Custom Implementation)
+**Processing Order (Critical!):**
+1. `{{#each array}}...{{/each}}` - Process all loops first
+2. Nested `{{#each}}` within parent loops
+3. `{{#if condition}}...{{else}}...{{/if}}` - Conditionals with else
+4. `{{#if condition}}...{{/if}}` - Simple conditionals
+5. `{{#unless condition}}...{{/unless}}` - Negative conditionals
+6. `{{variable}}` - Variable replacement
+7. `{{{htmlContent}}}` - HTML content (triple braces)
+8. Cleanup leftover tags and fix malformed HTML
+
+**Supported Syntax:**
+- `{{authorName}}` - Simple variable
+- `{{#if hasBooks}}...{{/if}}` - Conditional rendering
+- `{{#if cover}}...{{else}}...{{/if}}` - If-else blocks
+- `{{#unless condition}}...{{/unless}}` - Negative conditional
+- `{{#each books}}...{{/each}}` - Loop over arrays
+- `{{@index}}` - Loop index (0, 1, 2...)
+- `{{{extendedBio}}}` - Render HTML content
+
+### 3. Data Structure (Critical Schema)
+
+```javascript
+{
+  // Author Info
+  authorName: "String",
+  authorInitials: "String (first letters of names)",
+  tagline: "String",
+  bio: "String (HTML allowed)",
+  extendedBio: "String (HTML allowed)",
+  personalStory: "String (HTML allowed)",
+  authorPhoto: "assets/images/filename.jpg",
+  authorPhotoFile: "filename.jpg", // For copying
+  
+  // Books Array
+  books: [
+    {
+      title: "String",
+      publishDate: "String",
+      description: "String",
+      cover: "assets/images/book-cover.jpg",
+      coverFile: "book-cover.jpg", // For copying
+      buyLinks: [
+        { name: "Amazon", url: "https://..." }
+      ]
+    }
+  ],
+  featuredBooks: [], // First 2 books for home page
+  
+  // Hobbies Array
+  hobbies: [
+    {
+      name: "String",
+      icon: "icon-name",
+      description: "String"
+    }
+  ],
+  
+  // Social Links
+  socialLinks: {
+    twitter: "url",
+    facebook: "url",
+    instagram: "url",
+    linkedin: "url",
+    medium: "url"
+  },
+  
+  // Current Work
+  currentWorkTitle: "String",
+  currentWorkDescription: "String",
+  
+  // Contact
+  email: "email@domain.com",
+  phone: "String",
+  
+  // Flags
+  hasBooks: Boolean,
+  hasHobbies: Boolean,
+  hasCurrentWork: Boolean,
+  hasSocial: Boolean,
+  
+  // Meta
+  dataFolder: "path/to/data/folder"
+}
+```
+
+### 4. File Structure
+
+```
+AUTHORGEN/
+├── generator.js              # Main generation script
+├── templates/
+│   └── black-chrome/        # Template folder (can add more)
+│       ├── index.html       # About/Home page
+│       ├── books.html       # Books listing page
+│       ├── story.html       # My Story page
+│       ├── contact.html     # Contact page
+│       ├── blogs.html       # Blog page
+│       └── assets/
+│           ├── css/
+│           │   └── styles.css
+│           ├── js/
+│           │   └── main.js
+│           └── icons/
+│               └── icons.svg
+├── Data/
+│   └── author-name/         # Data folder for each author
+│       ├── data.csv         # Author data
+│       ├── author-images/   # Author photos
+│       └── book-covers/     # Book cover images
+└── generated-sites/         # Output directory
+    └── author-name-date/    # Generated site
+```
+
+## Creating New Templates
+
+### Step 1: Create Template Folder
+```bash
+mkdir -p templates/your-template-name/assets/{css,js,icons}
+```
+
+### Step 2: Create HTML Pages
+Create these 5 pages (required):
+- `index.html` - Home/About page
+- `books.html` - Books listing
+- `story.html` - Author's story
+- `contact.html` - Contact form/info
+- `blogs.html` - Blog page
+
+### Step 3: Use Template Syntax
+
+#### Basic Variables
+```html
+<h1>{{authorName}}</h1>
+<p>{{tagline}}</p>
+<p>{{bio}}</p>
+```
+
+#### Conditional Rendering
+```html
+{{#if authorPhoto}}
+<img src="{{authorPhoto}}" alt="{{authorName}}">
+{{/if}}
+
+{{#if hasBooks}}
+<section class="books">
+  <!-- Books content -->
+</section>
+{{/if}}
+```
+
+#### If-Else Blocks
+```html
+{{#if cover}}
+<img src="{{cover}}" alt="{{title}}">
+{{else}}
+<div class="placeholder">{{title}}</div>
+{{/if}}
+```
+
+#### Loops
+```html
+{{#each books}}
+<div class="book">
+  <h3>{{title}}</h3>
+  <p>{{publishDate}}</p>
+  <p>{{description}}</p>
+  {{#if cover}}
+  <img src="{{cover}}" alt="{{title}}">
+  {{/if}}
+  
+  {{#each buyLinks}}
+  <a href="{{url}}">{{name}}</a>
+  {{/each}}
+</div>
+{{/each}}
+```
+
+#### Featured Books (Home Page)
+```html
+{{#each featuredBooks}}
+<div class="featured-book">
+  <img src="{{cover}}" alt="{{title}}">
+  <h3>{{title}}</h3>
+</div>
+{{/each}}
+```
+
+#### Hobbies
+```html
+{{#each hobbies}}
+<div class="hobby">
+  <div class="hobby-icon">{{icon}}</div>
+  <h3>{{name}}</h3>
+  <p>{{description}}</p>
+</div>
+{{/each}}
+```
+
+#### Social Links
+```html
+{{#if socialLinks.twitter}}
+<a href="{{socialLinks.twitter}}">Twitter</a>
+{{/if}}
+```
+
+### Step 4: CSS Guidelines
+
+#### Use CSS Variables
+```css
+:root {
+  --color-primary: #ff6b35;
+  --color-bg: #0a0a0a;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+```
+
+#### Responsive Design
+```css
+/* Desktop first, then mobile */
+@media (max-width: 768px) {
+  /* Mobile styles */
+}
+```
+
+#### Hide Placeholders When Images Exist
+```css
+/* Critical: Prevents both image and placeholder showing */
+.book-cover-wrapper .book-cover ~ .book-cover-placeholder {
+  display: none;
+}
+```
+
+### Step 5: JavaScript (Optional)
+```javascript
+// Animation on scroll
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+      }
+    });
+  });
+  
+  document.querySelectorAll('[data-animate]').forEach(el => {
+    observer.observe(el);
+  });
+});
+```
+
+## Critical Implementation Details
+
+### 1. Template Engine Order
+**MUST process in this order to avoid broken HTML:**
+1. Nested `{{#each}}` loops (buyLinks, etc.)
+2. Conditionals with else
+3. Simple conditionals
+4. Variable replacements
+5. HTML cleanup
+
+### 2. Image Handling
+```javascript
+// In transformAuthorData()
+if (photoField.startsWith('http')) {
+  data.authorPhoto = photoField; // Use URL directly
+} else {
+  data.authorPhotoFile = photoField; // Local file
+  data.authorPhoto = `assets/images/${photoField}`;
+}
+
+// In generateSite()
+if (authorData.authorPhotoFile) {
+  const sourcePath = path.join(dataFolder, 'author-images', authorData.authorPhotoFile);
+  const destPath = path.join(outputDir, 'assets/images', authorData.authorPhotoFile);
+  fs.copyFileSync(sourcePath, destPath);
+}
+```
+
+### 3. Conditional Sections
+**Only show sections if data exists:**
+```javascript
+data.hasBooks = data.books && data.books.length > 0;
+data.hasHobbies = data.hobbies && data.hobbies.length > 0;
+data.hasCurrentWork = !!(data.currentWorkTitle && data.currentWorkDescription);
+```
+
+### 4. Placeholder Filtering
+```javascript
+function isPlaceholder(text) {
+  const placeholders = [
+    'enter', 'optional', 'provide', 'url', 'example',
+    'description', 'your', 'add', 'http', 'www'
+  ];
+  const lower = text.toLowerCase().trim();
+  return placeholders.some(p => lower.includes(p)) || lower.length < 3;
+}
+```
+
+### 5. HTML Structure Cleanup
+```javascript
+// Fix unclosed tags from empty loops
+rendered = rendered.replace(
+  /<div class="book-links">\s*(?=<div class="book-card")/g,
+  '<div class="book-links"></div>\n</div>\n</div>\n'
+);
+```
+
+## Testing New Templates
+
+### 1. Create Test Data
+```bash
+mkdir -p Data/test-author/{author-images,book-covers}
+# Add data.csv and test images
+```
+
+### 2. Generate Site
+```bash
+node generator.js Data/test-author your-template-name
+```
+
+### 3. Check Output
+- All 5 pages generated
+- Images copied correctly
+- No empty/broken sections
+- Responsive on mobile
+- All links working
+
+## Common Pitfalls
+
+### ❌ Wrong: Grid layout causes sizing issues
+```css
+.books-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+```
+
+### ✅ Correct: Flexible column layout
+```css
+.books-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+```
+
+### ❌ Wrong: Both image and placeholder show
+```html
+{{#if cover}}
+<img src="{{cover}}">
+{{/if}}
+<div class="placeholder">{{title}}</div>
+```
+
+### ✅ Correct: Use else block
+```html
+{{#if cover}}
+<img src="{{cover}}">
+{{else}}
+<div class="placeholder">{{title}}</div>
+{{/if}}
+```
+
+### ❌ Wrong: Nested loops break structure
+```html
+{{#each books}}
+  {{#if buyLinks}}
+    {{#each buyLinks}}
+      <a href="{{url}}">{{name}}</a>
+    {{/each}}
+  {{/if}}
+{{/each}}
+```
+
+### ✅ Correct: Process nested loops first in engine
+```javascript
+// In template engine, process {{#each buyLinks}} before {{#if}}
+```
+
+## Best Practices
+
+1. **Always test with missing data** - Use `{{#if}}` conditionals
+2. **Use semantic HTML** - `<section>`, `<article>`, `<header>`
+3. **Mobile-first CSS** - Start with mobile, add desktop enhancements
+4. **Optimize images** - Keep cover images < 500KB
+5. **Accessibility** - Alt text, ARIA labels, keyboard navigation
+6. **Performance** - Minimize CSS/JS, use CSS animations over JS
+7. **Clean code** - Comment complex sections, use consistent naming
+
+## Deployment
+
+Generated sites can be deployed to:
+- **Netlify**: Drag & drop folder
+- **Vercel**: `vercel deploy generated-sites/author-name`
+- **GitHub Pages**: Push to gh-pages branch
+- **Any static host**: Upload files via FTP/SFTP
+
+## Support & Extension
+
+### Adding New Data Fields
+1. Update CSV column
+2. Add to `transformAuthorData()` in generator.js
+3. Use in templates with `{{fieldName}}`
+
+### Custom Sections
+1. Add data to transform function
+2. Create HTML in template with conditionals
+3. Style in CSS
+
+### New Template Features
+- Dark/light mode toggle
+- Blog integration
+- Newsletter signup
+- Book previews
+- Reviews section
+- Timeline/journey
+- Awards section
+
+## Version History
+- v1.0: Initial release with Black Chrome template
+- Data folder workflow with local images
+- 5-page structure
+- Responsive design
+- Conditional rendering
+- Animation support
+

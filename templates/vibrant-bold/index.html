@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{authorName}} - Author</title>
+    <meta name="description" content="{{tagline}}">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">{{authorName}}</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                {{#if showBlogs}}
+                <li><a href="blogs.html">Blog</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="particles-container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="author-name animate-on-scroll">{{authorName}}</h1>
+                <p class="tagline animate-on-scroll">{{tagline}}</p>
+                <div class="hero-cta animate-on-scroll">
+                    <a href="#books" class="btn btn-primary btn-lg">Explore Books</a>
+                    <a href="#about" class="btn btn-secondary btn-lg">About Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section page-transition">
+        <div class="container">
+            <div class="about-section">
+                <div class="about-content">
+                    <div class="author-photo-wrapper animate-on-scroll-left">
+                        {{#if authorPhoto}}
+                        <img src="{{authorPhoto}}" alt="{{authorName}}" class="author-photo">
+                        {{else}}
+                        <div class="author-photo-placeholder">{{authorInitials}}</div>
+                        {{/if}}
+                    </div>
+                    <div class="bio-content animate-on-scroll-right">
+                        <h3>Welcome to My World</h3>
+                        <p>{{bio}}</p>
+                        {{#if extendedBio}}
+                        <p>{{{extendedBio}}}</p>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Books Section -->
+    {{#if hasBooks}}
+    <section id="books" class="section books-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Books</h2>
+            </div>
+            <div class="books-grid">
+                {{#each featuredBooks}}
+                <div class="book-card animate-on-scroll-scale">
+                    <div class="book-card-content">
+                        <div class="book-cover-wrapper">
+                            {{#if cover}}
+                            <img src="{{cover}}" alt="{{title}}" class="book-cover">
+                            {{else}}
+                            <div class="book-cover-placeholder">{{title}}</div>
+                            {{/if}}
+                        </div>
+                        <div class="book-info">
+                            <h3>{{title}}</h3>
+                            <div class="book-meta">{{publishDate}}</div>
+                            <div class="book-description">{{description}}</div>
+                            <div class="book-buy-links">
+                                {{#if buyLinks.0.url}}
+                                <a href="{{buyLinks.0.url}}" class="btn btn-primary btn-sm" target="_blank" rel="noopener">{{buyLinks.0.name}}</a>
+                                {{/if}}
+                                {{#if buyLinks.1.url}}
+                                <a href="{{buyLinks.1.url}}" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">{{buyLinks.1.name}}</a>
+                                {{/if}}
+                                {{#if buyLinks.2.url}}
+                                <a href="{{buyLinks.2.url}}" class="btn btn-primary btn-sm" target="_blank" rel="noopener">{{buyLinks.2.name}}</a>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <div class="text-center mt-xl">
+                <a href="books.html" class="btn btn-primary btn-lg">View All Books</a>
+            </div>
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Hobbies Section -->
+    {{#if hasHobbies}}
+    <section class="section hobbies-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Beyond Writing</h2>
+            </div>
+            <div class="hobbies-grid">
+                {{#each hobbies}}
+                <div class="hobby-card animate-on-scroll">
+                    <div class="hobby-icon">{{icon}}</div>
+                    <h3>{{name}}</h3>
+                    <p>{{description}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Current Work Section -->
+    {{#if hasCurrentWork}}
+    <section class="section">
+        <div class="container">
+            <div class="about-section">
+                <div class="text-center">
+                    <h2>Currently Working On</h2>
+                    <h3>{{currentWorkTitle}}</h3>
+                    <p>{{currentWorkDescription}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Connect With Me</h3>
+                <div class="social-links">
+                    {{#if social.twitter}}
+                    <a href="{{social.twitter}}" class="social-link" target="_blank" rel="noopener">🐦</a>
+                    {{/if}}
+                    {{#if social.facebook}}
+                    <a href="{{social.facebook}}" class="social-link" target="_blank" rel="noopener">📘</a>
+                    {{/if}}
+                    {{#if social.instagram}}
+                    <a href="{{social.instagram}}" class="social-link" target="_blank" rel="noopener">📷</a>
+                    {{/if}}
+                    {{#if social.linkedin}}
+                    <a href="{{social.linkedin}}" class="social-link" target="_blank" rel="noopener">💼</a>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2024 {{authorName}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

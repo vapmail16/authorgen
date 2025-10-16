@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Arjun Singh</title>
+    <meta name="description" content="Blog posts by Arjun Singh">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Arjun Singh</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">About</a>
+                <a href="books.html" class="nav-link">Books</a>
+                <a href="story.html" class="nav-link">My Story</a>
+                
+                <a href="blogs.html" class="nav-link active">Blog</a>
+                
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title animate-on-scroll">Latest Posts</h1>
+            <p class="page-subtitle animate-on-scroll">Thoughts, stories, and insights</p>
+            
+            <div class="rss-link-wrapper">
+                <a href="https://medium.com/@kartscrut" class="rss-link" target="_blank" rel="noopener">
+                    <svg class="rss-icon">
+                        <use href="assets/icons/icons.svg#rss"></use>
+                    </svg>
+                    Subscribe via RSS
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-content animate-on-scroll">
+                
+                <div class="blog-info">
+                    <p>Visit my blog to read the latest posts and insights.</p>
+                    <a href="https://medium.com/@kartscrut" class="btn btn-primary" target="_blank" rel="noopener">Visit Blog</a>
+                </div>
+                
+            </div>
+
+            <!-- Blog Feed Placeholder -->
+            <div class="blog-feed" id="blogFeed">
+                <!-- Blog posts will be loaded here via JavaScript if RSS feed is available -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-name">Arjun Singh</p>
+                    <p class="footer-tagline">Bestselling Action Author</p>
+                </div>
+                
+                <div class="footer-social">
+                    
+                    <a href="https://twitter.com/arjunfrisky" class="social-link" target="_blank" rel="noopener" aria-label="Twitter">
+                        <svg class="social-icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
+                    </a>
+
+                    <a href="https://www.facebook.com/arjun" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg class="social-icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
+                    </a>
+
+                    <a href="https://instagram.com/arjunfrisky" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg class="social-icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
+                    </a>
+
+                    <a href="https://www.linkedin.com/arjun" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg class="social-icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Arjun Singh. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

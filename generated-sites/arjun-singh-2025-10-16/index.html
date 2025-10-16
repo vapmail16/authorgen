@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun Singh - Author</title>
+    <meta name="description" content="Bestselling Action Author">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Arjun Singh</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">About</a>
+                <a href="books.html" class="nav-link">Books</a>
+                <a href="story.html" class="nav-link">My Story</a>
+                
+                <a href="blogs.html" class="nav-link">Blog</a>
+                
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="author-name animate-on-scroll">Arjun Singh</h1>
+                <p class="tagline animate-on-scroll">Bestselling Action Author</p>
+                <div class="hero-cta animate-on-scroll">
+                    <a href="#books" class="btn btn-primary btn-lg">Explore My Books</a>
+                    <a href="#story" class="btn btn-secondary btn-lg">My Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content animate-on-scroll">
+                <div class="author-photo-wrapper">
+                    
+                    <img src="assets/images/author.png" alt="Arjun Singh" class="author-photo">
+                    
+                </div>
+                <div class="author-bio-wrapper">
+                    <p class="author-bio">Award-winning author of 8 novels, Arjun has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p>
+                    
+                    <div class="extended-bio collapsed" id="extendedBio">
+                        <p>Award-winning author of 8 novels, John Doe has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p>
+                    </div>
+                    <button class="read-more-btn" id="readMoreBtn">Read more</button>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Work Section -->
+    <section class="current-work-section">
+        <div class="container">
+            <div class="current-work animate-on-scroll">
+                <span class="current-work-label">Currently Working On</span>
+                <h2 class="current-work-title">The Final Chapter</h2>
+                <p class="current-work-description">A thrilling new adventure exploring themes of courage, friendship, and second chances. This book represents a new direction incorporating magical realism with contemporary themes.</p>
+                <a href="books.html" class="btn btn-primary">Explore My Books</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Books Section -->
+    <section class="featured-books-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Featured Books</h2>
+            <div class="featured-books-grid">
+                
+                <div class="book-card animate-on-scroll">
+                    <div class="book-cover-wrapper">
+                        
+                        <img src="assets/images/book-1.jpg" alt="Summer Dreams" class="book-cover">
+                        
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Summer Dreams</h3>
+                        <p class="book-date">1/1/1999</p>
+                        <p class="book-description">There's something magical about the ritual of coffee and writing. Many of my best ideas come during quiet morning hours with a perfect cup of coffee.</p>
+                        <div class="book-buy-links">
+                            
+                            <a href="https://amazon.com/your-book" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Amazon</a>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="book-card animate-on-scroll">
+                    <div class="book-cover-wrapper">
+                        
+                        <img src="assets/images/book-2.jpg" alt="Winter Tales" class="book-cover">
+                        
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Winter Tales</h3>
+                        <p class="book-date">2/2/1999</p>
+                        <p class="book-description">A thrilling new adventure exploring themes of courage, friendship, and second chances. This book represents a new direction incorporating magical realism with contemporary themes.</p>
+                        <div class="book-buy-links">
+                            
+                            <a href="https://barnesandnoble.com/your-book" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Barnes & Noble</a>
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="section-footer">
+                <a href="books.html" class="btn btn-outline">View All Books</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies & Interests Section -->
+    <section class="hobbies-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Beyond Writing</h2>
+            <div class="hobbies-row">
+                
+                <div class="hobby-item animate-on-scroll">
+                    <div class="hobby-icon-wrapper">
+                        <svg class="hobby-icon">
+                            <use href="assets/icons/icons.svg#heart"></use>
+                        </svg>
+                    </div>
+                    <h3 class="hobby-title">Reading</h3>
+                    <p class="hobby-description">I'm an avid reader who believes great writers are first great readers. I enjoy exploring different genres and discovering new voices that challenge my perspective.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-name">Arjun Singh</p>
+                    <p class="footer-tagline">Bestselling Action Author</p>
+                </div>
+                
+                <div class="footer-social">
+                    
+                    <a href="https://twitter.com/arjunfrisky" class="social-link" target="_blank" rel="noopener" aria-label="Twitter">
+                        <svg class="social-icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
+                    </a>
+
+                    <a href="https://www.facebook.com/arjun" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg class="social-icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
+                    </a>
+
+                    <a href="https://instagram.com/arjunfrisky" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg class="social-icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
+                    </a>
+
+                    <a href="https://www.linkedin.com/arjun" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg class="social-icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Arjun Singh. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,69 @@
+
+Author Website Template Specification
+===================================
+
+Color Theme
+-----------
+- Primary Colors: Clean white or soft off-white background for a bright, professional feel.
+- Text Color: Main text in deep charcoal or black for easy reading.
+- Accent Colors: Minimalist use of muted earth tones (sage, beige, sand, soft blues or olive greens) for highlights and button backgrounds.
+- Link/CTA Colors: Soft blue, green, or earth accent for buttons and important links, with gentle hover transitions.
+- Border/Divider Colors: Very light gray, used for subtle section division.
+
+Layout Style
+------------
+- General Layout:
+  - Wide, generously spaced content areas for readability and elegance.
+  - Centralized main headings.
+  - Consistent, sticky top navigation bar with clear left-aligned navigation links.
+
+index.html
+-----------
+- authorName: Large, center-aligned heading in bold serif font as the focal point.
+- tagline: Directly under the author name, styled in a subtler serif or sans font.
+- authorBio: Short paragraph in main content area; readable font size, optionally next to or above author photo.
+- authorPhoto: Circular or rectangular image, near bio, with border or shadow.
+- extendedBio (optional): Additional section, collapsible or as a link ("Read more").
+- featuredBooks (first 3): Horizontal grid or carousel with book covers and detail buttons.
+- hobbies: Icon row or textual block near bio or further down.
+- currentWork: Highlighted sidebar or main section with summary and a CTA.
+
+books.html
+----------
+- authorName: Top, consistent with index.
+- all books: Tiled grid for all books, each as a card.
+- book covers: Large, clear images, possibly with hover effect.
+- buy links: Below each book cover, styled as buttons.
+
+story.html
+----------
+- authorName: Top heading.
+- personalStory: Main area, readable typography.
+- extendedBio: Expanded/collapsible or separate section.
+
+contact.html
+------------
+- authorName: Top or as form label.
+- contactEmail: Clearly visible, separate line or button.
+- location: Near email/contact, icon or text.
+- all social links: Icon row, colored or grayscale to match.
+
+blogs.html (if showBlogs)
+------------------------
+- authorName: Top/bold heading.
+- blogRSS: Icon/button, styled in blog header or footer.
+
+Typography
+----------
+- Headers: Bold, modern serif font for warmth/gravitas.
+- Body: Clear, readable sans-serif.
+- Buttons/CTAs: Subtle/distinct, matching accent color.
+
+Technical/Visual
+----------------
+- Responsiveness: Mobile-friendly grid/column shifts.
+- Whitespace: Generous spacing throughout.
+- Hierarchy: Bold titles, clear separation between content types.
+- Book covers: Large images, grid, impact.
+- CTA buttons: Accent highlight, strong placement.
+- Footer: Simple, with copyright/developer info.
