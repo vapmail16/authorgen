@@ -1,20 +1,20 @@
 /* ================================
-   Black Chrome Theme - Author Website
+   Minimal White Theme - Author Website
    ================================ */
 
 /* CSS Variables */
 :root {
-    --color-bg: #0a0a0a;
-    --color-bg-secondary: #141414;
-    --color-bg-tertiary: #1e1e1e;
-    --color-chrome: #c0c0c0;
-    --color-chrome-light: #e8e8e8;
-    --color-chrome-dark: #8a8a8a;
-    --color-accent: #ff6b35;
-    --color-accent-hover: #ff8555;
-    --color-text: #e8e8e8;
-    --color-text-secondary: #a8a8a8;
-    --color-border: #2a2a2a;
+    --color-bg: #FFFFFF;
+    --color-bg-secondary: #FAFAFA;
+    --color-bg-tertiary: #F5F5F5;
+    --color-chrome: #E0E0E0;
+    --color-chrome-light: #2C2C2C;
+    --color-chrome-dark: #7A7A7A;
+    --color-accent: #4A90E2;
+    --color-accent-hover: #357ABD;
+    --color-text: #2C2C2C;
+    --color-text-secondary: #666666;
+    --color-border: #F0F0F0;
     
     --font-primary: 'Inter', sans-serif;
     --font-display: 'Playfair Display', serif;
