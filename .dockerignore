@@ -1,0 +1,23 @@
+# Generated sites
+generated-sites/
+
+# Documentation
+docs/
+
+# Test data
+Data/
+
+# Git
+.git/
+.gitignore
+
+# OS files
+.DS_Store
+*.DS_Store
+
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+
