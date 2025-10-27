@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: author-site
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    dockerArgs:
+      SITE: arjun-singh-2025-10-16
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+
