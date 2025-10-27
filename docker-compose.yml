@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  author-site-default:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SITE: arjun-singh-2025-10-16
+    ports:
+      - "8080:80"
+    container_name: author-site-default
+
+  author-site-vibrant:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SITE: arjun-singh-2025-10-16-vibrant
+    ports:
+      - "8081:80"
+    container_name: author-site-vibrant
+

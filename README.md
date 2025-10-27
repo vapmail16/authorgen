@@ -23,15 +23,33 @@ All documentation is in the [`docs/`](./docs/) folder.
 
 ## 🐳 Docker Usage
 
-Each generated site includes a Dockerfile. To build and run:
+### Deploy Individual Site
+
+Each generated site has its own Dockerfile. Choose which site to deploy:
 
 ```bash
-cd generated-sites/arjun-singh
+# Method 1: Use the deploy script
+./deploy-site.sh arjun-singh-2025-10-16
+
+# Method 2: Manual deployment
+cd generated-sites/arjun-singh-2025-10-16
 docker build -t author-site .
-docker run -p 8080:80 author-site
+docker run -p 8080:80 --name author-site author-site
 ```
 
 Visit `http://localhost:8080`
+
+### Deploy All Sites
+
+Or use docker-compose to run multiple sites:
+
+```bash
+docker-compose up
+```
+
+This will serve:
+- Site 1: http://localhost:8080
+- Site 2: http://localhost:8081
 
 ## 📖 Full Documentation
 
