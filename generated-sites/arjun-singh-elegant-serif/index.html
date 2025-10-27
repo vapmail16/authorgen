@@ -4,77 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arjun Singh - Author</title>
+    <meta name="description" content="Bestselling Action Author">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="elegant-container">
+    <!-- Header -->
+    <nav class="elegant-header">
+        <div class="elegant-header-content">
+            <div class="elegant-header-name">ARJUN SINGH</div>
+            <div class="elegant-nav-menu">
+                <a href="index.html" class="elegant-nav-link active">ABOUT</a>
+                <a href="books.html" class="elegant-nav-link">WORKS</a>
+                <a href="story.html" class="elegant-nav-link">REVIEWS</a>
+                <a href="contact.html" class="elegant-nav-link">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="elegant-layout">
+        <!-- Left Sidebar -->
         <aside class="elegant-sidebar">
-            <h1 class="elegant-name">Arjun Singh</h1>
-            <nav class="elegant-nav">
-                <a href="index.html">About</a>
-                <a href="books.html">Works</a>
-                <a href="story.html">Story</a>
+            <div class="elegant-profile-box">
                 
-                <a href="blogs.html">Articles</a>
+                <img src="assets/images/author.png" alt="Arjun Singh" class="elegant-avatar-img">
                 
-                <a href="contact.html">Contact</a>
-            </nav>
+                <div class="elegant-avatar-initials">AS</div>
+                
+            </div>
+            <h1 class="elegant-sidebar-name">Arjun Singh</h1>
+            <p class="elegant-sidebar-tagline">Bestselling Action Author</p>
+            <div class="elegant-divider"></div>
+
+            <div class="elegant-current-section">
+                <p class="elegant-label-small">CURRENT WORK</p>
+                <h2 class="elegant-current-title">The Final Chapter</h2>
+                <p class="elegant-current-text">A thrilling new adventure exploring themes of courage, friendship, and second chances. This book represents a new direction incorporating magical realism with contemporary themes.</p>
+            </div>
+            <div class="elegant-divider"></div>
+
+            <div class="elegant-social-links">
+                
+                <a href="https://twitter.com/arjunfrisky" target="_blank" rel="noopener" class="elegant-social-link">TWITTER →</a>
+
+                <a href="https://instagram.com/arjunfrisky" target="_blank" rel="noopener" class="elegant-social-link">INSTAGRAM →</a>
+
+                <a href="https://www.facebook.com/arjun" target="_blank" rel="noopener" class="elegant-social-link">FACEBOOK →</a>
+
+                <a href="https://www.linkedin.com/arjun" target="_blank" rel="noopener" class="elegant-social-link">GOODREADS →</a>
+                
+            </div>
+            
         </aside>
 
+        <!-- Main Content -->
         <main class="elegant-main">
-            <header class="elegant-header">
-                <h2>Author & Writer</h2>
-            </header>
-
-            <section class="elegant-bio">
-                
-                <div class="elegant-photo-wrapper">
-                    <img src="assets/images/author.png" alt="Arjun Singh">
+            <!-- About Section -->
+            <section class="elegant-about-section">
+                <div class="elegant-section-header">
+                    <div class="elegant-icon-box">ℹ</div>
+                    <h2 class="elegant-section-title">About the Author</h2>
+                </div>
+                <div class="elegant-timeline">
+                    <div class="elegant-timeline-dot"></div>
+                    <p class="elegant-timeline-text">Award-winning author of 8 novels, Arjun has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p>
                 </div>
                 
-                <div class="elegant-text">
-                    <h3>About</h3>
-                    <p>Award-winning author of 8 novels, Arjun has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p>
+                <a href="story.html" class="elegant-read-more">
+                    READ MORE ✓
+                </a>
+                
+            </section>
+
+            <!-- Literary Works Section -->
+            <section class="elegant-works-section">
+                <div class="elegant-works-header">
+                    <h2 class="elegant-works-title">Literary Works</h2>
+                    <p class="elegant-works-subtitle">PUBLISHED COLLECTION</p>
+                </div>
+                <div class="elegant-books-list">
                     
-                    <div class="elegant-extended"><p>Award-winning author of 8 novels, John Doe has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p></div>
+                    <div class="elegant-book-item">
+                        <div class="elegant-book-cover-section">
+                            
+                            <img src="assets/images/book-1.jpg" alt="Summer Dreams" class="elegant-book-cover-large">
+                            
+                            <div class="elegant-cover-placeholder-large">BOOK COVER</div>
+                            
+                        </div>
+                        <div class="elegant-book-details">
+                            <p class="elegant-book-published">PUBLISHED 1/1/1999</p>
+                            <h3 class="elegant-book-title-main">Summer Dreams</h3>
+                            <p class="elegant-book-desc">There's something magical about the ritual of coffee and writing. Many of my best ideas come during quiet morning hours with a perfect cup of coffee.</p>
+                            <p class="elegant-available-label">AVAILABLE AT:</p>
+                            
+                            <div class="elegant-purchase-links-list">
+                                
+                                <a href="" target="_blank" rel="noopener" class="elegant-purchase-link"> ↗</a>
+                                
+                    <div class="elegant-book-item">
+                        <div class="elegant-book-cover-section">
+                            
+                            <img src="assets/images/book-2.jpg" alt="Winter Tales" class="elegant-book-cover-large">
+                            
+                            <div class="elegant-cover-placeholder-large">BOOK COVER</div>
+                            
+                        </div>
+                        <div class="elegant-book-details">
+                            <p class="elegant-book-published">PUBLISHED 2/2/1999</p>
+                            <h3 class="elegant-book-title-main">Winter Tales</h3>
+                            <p class="elegant-book-desc">A thrilling new adventure exploring themes of courage, friendship, and second chances. This book represents a new direction incorporating magical realism with contemporary themes.</p>
+                            <p class="elegant-available-label">AVAILABLE AT:</p>
+                            
+                            <div class="elegant-purchase-links-list">
+                                
+                                <a href="" target="_blank" rel="noopener" class="elegant-purchase-link"> ↗</a>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
                     
                 </div>
             </section>
 
-            <section class="elegant-works">
-                <h3>Published Works</h3>
-                <div class="elegant-works-list">
+            <!-- Beyond Writing Section -->
+            <section class="elegant-interests-section">
+                <h2 class="elegant-section-title-center">Beyond Writing</h2>
+                <p class="elegant-section-subtitle">PERSONAL PURSUITS</p>
+                <div class="elegant-interests-grid">
                     
-                    <div class="elegant-work">
-                        <div class="elegant-work-info">
-                            <h4>Summer Dreams</h4>
-                            <p>1/1/1999</p>
+                    <div class="elegant-interest-card">
+                        <div class="elegant-icon-card">
+                            <div class="elegant-icon-inner"></div>
                         </div>
-                        
-                        <div class="elegant-work-cover">
-                            <img src="assets/images/book-1.jpg" alt="Summer Dreams">
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="elegant-work">
-                        <div class="elegant-work-info">
-                            <h4>Winter Tales</h4>
-                            <p>2/2/1999</p>
-                        </div>
-                        
-                        <div class="elegant-work-cover">
-                            <img src="assets/images/book-2.jpg" alt="Winter Tales">
-                        </div>
-                        
+                        <h3 class="elegant-interest-title">Reading</h3>
+                        <p class="elegant-interest-desc">I'm an avid reader who believes great writers are first great readers. I enjoy exploring different genres and discovering new voices that challenge my perspective.</p>
                     </div>
                     
                 </div>
             </section>
-            
+
+            <!-- Footer -->
+            <footer class="elegant-footer">
+                <div class="elegant-footer-line"></div>
+                <p class="elegant-copyright">© 2025 ARJUN SINGH</p>
+                <p class="elegant-rights">All Rights Reserved</p>
+            </footer>
         </main>
     </div>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>

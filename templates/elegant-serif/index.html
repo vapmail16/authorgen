@@ -4,66 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{authorName}} - Author</title>
+    <meta name="description" content="{{tagline}}">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="elegant-container">
+    <!-- Header -->
+    <nav class="elegant-header">
+        <div class="elegant-header-content">
+            <div class="elegant-header-name">ARJUN SINGH</div>
+            <div class="elegant-nav-menu">
+                <a href="index.html" class="elegant-nav-link active">ABOUT</a>
+                <a href="books.html" class="elegant-nav-link">WORKS</a>
+                <a href="story.html" class="elegant-nav-link">REVIEWS</a>
+                <a href="contact.html" class="elegant-nav-link">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="elegant-layout">
+        <!-- Left Sidebar -->
         <aside class="elegant-sidebar">
-            <h1 class="elegant-name">{{authorName}}</h1>
-            <nav class="elegant-nav">
-                <a href="index.html">About</a>
-                <a href="books.html">Works</a>
-                <a href="story.html">Story</a>
-                {{#if showBlogs}}
-                <a href="blogs.html">Articles</a>
+            <div class="elegant-profile-box">
+                {{#if authorPhoto}}
+                <img src="{{authorPhoto}}" alt="{{authorName}}" class="elegant-avatar-img">
+                {{else}}
+                <div class="elegant-avatar-initials">{{authorInitials}}</div>
                 {{/if}}
-                <a href="contact.html">Contact</a>
-            </nav>
+            </div>
+            <h1 class="elegant-sidebar-name">{{authorName}}</h1>
+            <p class="elegant-sidebar-tagline">{{tagline}}</p>
+            <div class="elegant-divider"></div>
+
+            {{#if showCurrentWork}}
+            <div class="elegant-current-section">
+                <p class="elegant-label-small">CURRENT WORK</p>
+                <h2 class="elegant-current-title">{{currentWorkTitle}}</h2>
+                <p class="elegant-current-text">{{currentWorkDescription}}</p>
+            </div>
+            <div class="elegant-divider"></div>
+            {{/if}}
+
+            {{#if hasSocial}}
+            <div class="elegant-social-links">
+                {{#if social.twitter}}
+                <a href="https://twitter.com/{{social.twitter}}" target="_blank" rel="noopener" class="elegant-social-link">TWITTER →</a>
+                {{/if}}
+                {{#if social.instagram}}
+                <a href="https://instagram.com/{{social.instagram}}" target="_blank" rel="noopener" class="elegant-social-link">INSTAGRAM →</a>
+                {{/if}}
+                {{#if social.facebook}}
+                <a href="{{social.facebook}}" target="_blank" rel="noopener" class="elegant-social-link">FACEBOOK →</a>
+                {{/if}}
+                {{#if social.linkedin}}
+                <a href="{{social.linkedin}}" target="_blank" rel="noopener" class="elegant-social-link">GOODREADS →</a>
+                {{/if}}
+            </div>
+            {{/if}}
         </aside>
 
+        <!-- Main Content -->
         <main class="elegant-main">
-            <header class="elegant-header">
-                <h2>Author & Writer</h2>
-            </header>
-
-            <section class="elegant-bio">
-                {{#if authorPhoto}}
-                <div class="elegant-photo-wrapper">
-                    <img src="{{authorPhoto}}" alt="{{authorName}}">
+            <!-- About Section -->
+            <section class="elegant-about-section">
+                <div class="elegant-section-header">
+                    <div class="elegant-icon-box">ℹ</div>
+                    <h2 class="elegant-section-title">About the Author</h2>
                 </div>
+                <div class="elegant-timeline">
+                    <div class="elegant-timeline-dot"></div>
+                    <p class="elegant-timeline-text">{{authorBio}}</p>
+                </div>
+                {{#if extendedBio}}
+                <a href="story.html" class="elegant-read-more">
+                    READ MORE ✓
+                </a>
                 {{/if}}
-                <div class="elegant-text">
-                    <h3>About</h3>
-                    <p>{{authorBio}}</p>
-                    {{#if extendedBio}}
-                    <div class="elegant-extended">{{{extendedBio}}}</div>
-                    {{/if}}
-                </div>
             </section>
 
             {{#if hasBooks}}
-            <section class="elegant-works">
-                <h3>Published Works</h3>
-                <div class="elegant-works-list">
+            <!-- Literary Works Section -->
+            <section class="elegant-works-section">
+                <div class="elegant-works-header">
+                    <h2 class="elegant-works-title">Literary Works</h2>
+                    <p class="elegant-works-subtitle">PUBLISHED COLLECTION</p>
+                </div>
+                <div class="elegant-books-list">
                     {{#each featuredBooks}}
-                    <div class="elegant-work">
-                        <div class="elegant-work-info">
-                            <h4>{{title}}</h4>
-                            <p>{{publishDate}}</p>
+                    <div class="elegant-book-item">
+                        <div class="elegant-book-cover-section">
+                            {{#if cover}}
+                            <img src="{{cover}}" alt="{{title}}" class="elegant-book-cover-large">
+                            {{else}}
+                            <div class="elegant-cover-placeholder-large">BOOK COVER</div>
+                            {{/if}}
                         </div>
-                        {{#if cover}}
-                        <div class="elegant-work-cover">
-                            <img src="{{cover}}" alt="{{title}}">
+                        <div class="elegant-book-details">
+                            <p class="elegant-book-published">PUBLISHED {{publishDate}}</p>
+                            <h3 class="elegant-book-title-main">{{title}}</h3>
+                            <p class="elegant-book-desc">{{description}}</p>
+                            <p class="elegant-available-label">AVAILABLE AT:</p>
+                            {{#if buyLinks}}
+                            <div class="elegant-purchase-links-list">
+                                {{#each buyLinks}}
+                                <a href="{{url}}" target="_blank" rel="noopener" class="elegant-purchase-link">{{name}} ↗</a>
+                                {{/each}}
+                            </div>
+                            {{/if}}
                         </div>
-                        {{/if}}
                     </div>
                     {{/each}}
                 </div>
             </section>
             {{/if}}
+
+            {{#if hasHobbies}}
+            <!-- Beyond Writing Section -->
+            <section class="elegant-interests-section">
+                <h2 class="elegant-section-title-center">Beyond Writing</h2>
+                <p class="elegant-section-subtitle">PERSONAL PURSUITS</p>
+                <div class="elegant-interests-grid">
+                    {{#each hobbies}}
+                    <div class="elegant-interest-card">
+                        <div class="elegant-icon-card">
+                            <div class="elegant-icon-inner"></div>
+                        </div>
+                        <h3 class="elegant-interest-title">{{title}}</h3>
+                        <p class="elegant-interest-desc">{{description}}</p>
+                    </div>
+                    {{/each}}
+                </div>
+            </section>
+            {{/if}}
+
+            <!-- Footer -->
+            <footer class="elegant-footer">
+                <div class="elegant-footer-line"></div>
+                <p class="elegant-copyright">© {{currentYear}} ARJUN SINGH</p>
+                <p class="elegant-rights">All Rights Reserved</p>
+            </footer>
         </main>
     </div>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>

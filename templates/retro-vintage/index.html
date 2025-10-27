@@ -4,84 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{authorName}} - Author</title>
+    <meta name="description" content="{{tagline}}">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="retro-wrapper">
-        <nav class="retro-nav">
-            <div class="retro-nav-inner">
-                <a href="index.html" class="retro-logo">{{authorName}}</a>
-                <div class="retro-menu">
-                    <a href="index.html">About</a>
-                    <a href="books.html">Books</a>
-                    <a href="story.html">Story</a>
-                    {{#if showBlogs}}
-                    <a href="blogs.html">Blog</a>
-                    {{/if}}
-                    <a href="contact.html">Contact</a>
-                </div>
+    <!-- Header -->
+    <nav class="retro-header">
+        <div class="retro-header-content">
+            <div class="retro-name-header">{{authorName}}</div>
+            <div class="retro-nav-links">
+                <a href="index.html">About</a>
+                <a href="books.html">Books</a>
+                <a href="story.html">My Story</a>
+                {{#if showBlogs}}
+                <a href="blogs.html">Blog</a>
+                {{/if}}
+                <a href="contact.html">Contact</a>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <header class="retro-hero">
-            <div class="retro-hero-inner">
+    <!-- Hero Section with Vintage Frame -->
+    <section class="retro-hero-section">
+        <div class="retro-frame-border">
+            <div class="retro-content-frame">
                 {{#if authorPhoto}}
-                <div class="retro-photo-frame">
+                <div class="retro-avatar-circle">
                     <img src="{{authorPhoto}}" alt="{{authorName}}">
                 </div>
+                {{else}}
+                <div class="retro-avatar-placeholder">
+                    <span>{{authorInitials}}</span>
+                </div>
                 {{/if}}
-                <h1 class="retro-title">{{authorName}}</h1>
-                <p class="retro-subtitle">{{tagline}}</p>
-                <div class="retro-divider"></div>
+                <h1 class="retro-hero-name">
+                    <span class="retro-decorative-line"></span>
+                    {{authorName}}
+                    <span class="retro-decorative-line"></span>
+                </h1>
+                <p class="retro-hero-tagline">{{tagline}}</p>
+                <p class="retro-hero-bio">{{authorBio}}</p>
+                <div class="retro-hero-buttons">
+                    <a href="books.html" class="retro-btn-solid">Explore My Books</a>
+                    <a href="contact.html" class="retro-btn-outline">Get In Touch</a>
+                </div>
             </div>
-        </header>
+        </div>
+    </section>
 
-        <main class="retro-content">
-            <article class="retro-bio">
-                <h2>About the Author</h2>
-                <p>{{authorBio}}</p>
-                {{#if extendedBio}}
-                <div class="retro-extended">{{{extendedBio}}}</div>
-                {{/if}}
-            </article>
+    {{#if showCurrentWork}}
+    <!-- Currently Working On Section -->
+    <section class="retro-working-section">
+        <div class="retro-working-content">
+            <p class="retro-working-label">CURRENTLY WORKING ON</p>
+            <h2 class="retro-working-title">{{currentWorkTitle}}</h2>
+            <p class="retro-working-desc">{{currentWorkDescription}}</p>
+            <a href="books.html" class="retro-btn-learn">Learn More</a>
+        </div>
+    </section>
+    {{/if}}
 
-            {{#if hasBooks}}
-            <section class="retro-books">
-                <h2 class="retro-section-title">Published Works</h2>
-                <div class="retro-books-grid">
-                    {{#each featuredBooks}}
-                    <div class="retro-book">
-                        <div class="retro-book-cover">
+    <!-- About the Author Section -->
+    <section class="retro-about-section">
+        <h2 class="retro-section-heading">About the Author</h2>
+        <div class="retro-section-underline"></div>
+        <div class="retro-about-content">
+            <div class="retro-drop-cap">A</div>
+            <p class="retro-about-text">ward-winning author of contemporary fiction with a passion for exploring the human condition through storytelling. With over a decade of writing experience, I craft narratives that resonate with readers worldwide.</p>
+            <a href="story.html" class="retro-read-more">Read More <span>▼</span></a>
+        </div>
+    </section>
+
+    {{#if hasBooks}}
+    <!-- Featured Books Section -->
+    <section class="retro-books-section">
+        <h2 class="retro-section-heading">Featured Books</h2>
+        <div class="retro-section-underline"></div>
+        <div class="retro-books-container">
+            <div class="retro-book-grid">
+                {{#each featuredBooks}}
+                <div class="retro-book-card">
+                    <div class="retro-book-cover-frame">
+                        <div class="retro-frame-outer"></div>
+                        <div class="retro-frame-middle"></div>
+                        <div class="retro-frame-inner">
                             {{#if cover}}
-                            <img src="{{cover}}" alt="{{title}}">
+                            <img src="{{cover}}" alt="{{title}}" class="retro-book-image">
                             {{else}}
-                            <div class="retro-placeholder">{{title}}</div>
+                            <div class="retro-book-placeholder">Book Cover</div>
                             {{/if}}
                         </div>
-                        <div class="retro-book-info">
-                            <h3>{{title}}</h3>
-                            <p class="retro-date">{{publishDate}}</p>
-                        </div>
                     </div>
-                    {{/each}}
+                    <h3 class="retro-book-title">{{title}}</h3>
+                    <p class="retro-book-year">{{publishDate}}</p>
+                    <p class="retro-book-description">{{description}}</p>
+                    {{#if buyLinks}}
+                    <div class="retro-purchase-links">
+                        {{#each buyLinks}}
+                        <a href="{{url}}" target="_blank" rel="noopener">{{name}} ↗</a>
+                        {{/each}}
+                    </div>
+                    {{/if}}
                 </div>
-            </section>
-            {{/if}}
+                {{/each}}
+            </div>
+            <div class="retro-view-all-container">
+                <a href="books.html" class="retro-btn-view-all">View All Books</a>
+            </div>
+        </div>
+    </section>
+    {{/if}}
 
-            {{#if showCurrentWork}}
-            <section class="retro-work">
-                <h2>Currently Working On</h2>
-                <h3>{{currentWorkTitle}}</h3>
-                <p>{{currentWorkDescription}}</p>
-            </section>
-            {{/if}}
-        </main>
+    {{#if hasHobbies}}
+    <!-- Hobbies & Interests Section -->
+    <section class="retro-hobbies-section">
+        <div class="retro-hobbies-heading-wrapper">
+            <h2 class="retro-hobbies-title">Hobbies & Interests</h2>
+        </div>
+        <div class="retro-hobbies-grid">
+            {{#each hobbies}}
+            <div class="retro-hobby-item">
+                <div class="retro-hobby-frame">
+                    <div class="retro-hobby-icon-circle">
+                        <div class="retro-icon-inner"></div>
+                    </div>
+                </div>
+                <h3 class="retro-hobby-name">{{title}}</h3>
+                <p class="retro-hobby-desc">{{description}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/if}}
 
-        <footer class="retro-footer">
-            <p>&copy; {{currentYear}} {{authorName}}. All rights reserved.</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="retro-footer">
+        <div class="retro-footer-content">
+            <h3 class="retro-footer-name">{{authorName}}</h3>
+            <p class="retro-footer-tagline">{{tagline}}</p>
+            {{#if hasSocial}}
+            <div class="retro-footer-social">
+                {{#if social.twitter}}
+                <a href="https://twitter.com/{{social.twitter}}" target="_blank" rel="noopener">Twitter</a>
+                {{/if}}
+                {{#if social.instagram}}
+                <a href="https://instagram.com/{{social.instagram}}" target="_blank" rel="noopener">Instagram</a>
+                {{/if}}
+                {{#if social.facebook}}
+                <a href="{{social.facebook}}" target="_blank" rel="noopener">Facebook</a>
+                {{/if}}
+                {{#if social.linkedin}}
+                <a href="{{social.linkedin}}" target="_blank" rel="noopener">Goodreads</a>
+                {{/if}}
+            </div>
+            {{/if}}
+            <p class="retro-copyright">&copy; {{currentYear}} {{authorName}}. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>

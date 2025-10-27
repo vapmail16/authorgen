@@ -4,84 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{authorName}} - Author</title>
+    <meta name="description" content="{{tagline}}">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="bright-wrapper">
-        <!-- Bold Navigation -->
-        <nav class="bright-nav">
-            <a href="index.html" class="bright-brand">{{authorName}}</a>
-            <div class="bright-menu">
-                <a href="index.html" class="bright-link active">About</a>
-                <a href="books.html" class="bright-link">Books</a>
-                <a href="story.html" class="bright-link">Story</a>
+    <!-- Bright Header -->
+    <nav class="bright-header">
+        <div class="bright-header-content">
+            <a href="index.html" class="bright-logo">{{authorName}}</a>
+            <div class="bright-nav">
+                <a href="index.html" class="active">About</a>
+                <a href="books.html">Books</a>
+                <a href="story.html">My Story</a>
                 {{#if showBlogs}}
-                <a href="blogs.html" class="bright-link">Blog</a>
+                <a href="blogs.html">Blog</a>
                 {{/if}}
-                <a href="contact.html" class="bright-link bright-cta">Contact</a>
+                <a href="contact.html">Contact</a>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <!-- Hero Split Layout -->
-        <section class="bright-hero">
+    <!-- Split Hero Section -->
+    <section class="bright-hero">
+        <div class="bright-hero-split">
             <div class="bright-hero-left">
-                <h1 class="bright-title">{{authorName}}</h1>
-                <p class="bright-subtitle">{{tagline}}</p>
-                <p class="bright-description">{{authorBio}}</p>
-                <div class="bright-buttons">
-                    <a href="books.html" class="btn-bright">View Books</a>
-                </div>
-            </div>
-            <div class="bright-hero-right">
                 {{#if authorPhoto}}
-                <div class="bright-image">
+                <div class="bright-avatar-box">
                     <img src="{{authorPhoto}}" alt="{{authorName}}">
                 </div>
+                {{else}}
+                <div class="bright-avatar-box">
+                    <span>{{authorInitials}}</span>
+                </div>
                 {{/if}}
             </div>
-        </section>
-
-        {{#if hasBooks}}
-        <section class="bright-books">
-            <h2 class="bright-section-title">My Books</h2>
-            <div class="bright-books-flex">
-                {{#each featuredBooks}}
-                <div class="bright-book">
-                    {{#if cover}}
-                    <img src="{{cover}}" alt="{{title}}" class="bright-cover">
-                    {{else}}
-                    <div class="bright-placeholder">{{title}}</div>
-                    {{/if}}
-                    <div class="bright-book-title">{{title}}</div>
-                    <p class="bright-book-date">{{publishDate}}</p>
+            <div class="bright-hero-right">
+                <h1 class="bright-name">{{authorName}}</h1>
+                <p class="bright-tagline">{{tagline}}</p>
+                <p class="bright-bio">{{authorBio}}</p>
+                <div class="bright-hero-buttons">
+                    <a href="books.html" class="bright-btn-orange">Explore Books</a>
+                    <a href="contact.html" class="bright-btn-blue">Contact Me</a>
                 </div>
-                {{/each}}
             </div>
-        </section>
-        {{/if}}
+        </div>
+    </section>
 
-        {{#if hasSocial}}
-        <section class="bright-social">
-            <h2>Connect</h2>
-            <div class="bright-social-links">
+    {{#if showCurrentWork}}
+    <!-- Currently Working On - Teal Banner -->
+    <section class="bright-current-section">
+        <div class="bright-current-content">
+            <p class="bright-current-label">CURRENTLY WORKING ON</p>
+            <h2 class="bright-current-title">{{currentWorkTitle}}</h2>
+            <p class="bright-current-desc">{{currentWorkDescription}}</p>
+            <a href="books.html" class="bright-btn-learn">Learn More</a>
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- About Me Section -->
+    <section class="bright-about">
+        <div class="bright-about-content">
+            <h2 class="bright-about-title">About Me</h2>
+            <p class="bright-about-text">{{authorBio}}</p>
+            {{#if extendedBio}}
+            <a href="story.html" class="bright-read-more">
+                Read More <span>▼</span>
+            </a>
+            {{/if}}
+        </div>
+    </section>
+
+    {{#if hasBooks}}
+    <!-- Featured Books Section -->
+    <section class="bright-books-section">
+        <h2 class="bright-books-title">Featured Books</h2>
+        <div class="bright-books-grid">
+            {{#each featuredBooks}}
+            <div class="bright-book-card">
+                {{#if cover}}
+                <div class="bright-book-cover-wrapper">
+                    <img src="{{cover}}" alt="{{title}}" class="bright-book-cover">
+                </div>
+                {{else}}
+                <div class="bright-book-cover-placeholder">
+                    Book Cover
+                </div>
+                {{/if}}
+                <h3 class="bright-book-title-card">{{title}}</h3>
+                <p class="bright-book-year-card">{{publishDate}}</p>
+                <p class="bright-book-desc-card">{{description}}</p>
+                {{#if buyLinks}}
+                <div class="bright-purchase-links">
+                    {{#each buyLinks}}
+                    <a href="{{url}}" target="_blank" rel="noopener" class="bright-link">
+                        {{name}} ↗
+                    </a>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+        <div class="bright-view-all">
+            <a href="books.html" class="bright-btn-gradient">View All Books</a>
+        </div>
+    </section>
+    {{/if}}
+
+    {{#if hasHobbies}}
+    <!-- Hobbies & Interests Section -->
+    <section class="bright-hobbies-section">
+        <h2 class="bright-hobbies-title">Hobbies & Interests</h2>
+        <div class="bright-hobbies-grid">
+            {{#each hobbies}}
+            <div class="bright-hobby-card">
+                <div class="bright-hobby-icon-box">
+                    <div class="hobby-icon-symbol">●</div>
+                </div>
+                <h3 class="bright-hobby-name">{{title}}</h3>
+                <p class="bright-hobby-description">{{description}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Footer -->
+    <footer class="bright-footer-section">
+        <div class="bright-footer-content">
+            <h3 class="bright-footer-name">{{authorName}}</h3>
+            <p class="bright-footer-tagline">{{tagline}}</p>
+            {{#if hasSocial}}
+            <div class="bright-footer-social">
                 {{#if social.twitter}}
-                <a href="https://twitter.com/{{social.twitter}}" class="bright-social-link">Twitter</a>
+                <a href="https://twitter.com/{{social.twitter}}" target="_blank" rel="noopener">Twitter</a>
                 {{/if}}
                 {{#if social.instagram}}
-                <a href="https://instagram.com/{{social.instagram}}" class="bright-social-link">Instagram</a>
+                <a href="https://instagram.com/{{social.instagram}}" target="_blank" rel="noopener">Instagram</a>
+                {{/if}}
+                {{#if social.facebook}}
+                <a href="{{social.facebook}}" target="_blank" rel="noopener">Facebook</a>
                 {{/if}}
                 {{#if social.linkedin}}
-                <a href="{{social.linkedin}}" class="bright-social-link">LinkedIn</a>
+                <a href="{{social.linkedin}}" target="_blank" rel="noopener">Goodreads</a>
                 {{/if}}
             </div>
-        </section>
-        {{/if}}
+            {{/if}}
+        </div>
+    </footer>
 
-        <footer class="bright-footer">
-            <p>&copy; {{currentYear}} {{authorName}}</p>
-        </footer>
-    </div>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

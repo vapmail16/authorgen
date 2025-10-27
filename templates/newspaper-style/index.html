@@ -4,72 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{authorName}} - Author</title>
+    <meta name="description" content="{{tagline}}">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="newspaper">
-        <header class="newspaper-header">
-            <div class="newspaper-masthead">
-                <h1 class="newspaper-name">{{authorName}}</h1>
-                <p class="newspaper-tag">{{tagline}}</p>
-            </div>
-            <nav class="newspaper-nav">
-                <a href="index.html">About</a>
-                <a href="books.html">Books</a>
-                <a href="story.html">Story</a>
-                {{#if showBlogs}}
-                <a href="blogs.html">Blog</a>
-                {{/if}}
-                <a href="contact.html">Contact</a>
-            </nav>
-        </header>
+    <!-- Masthead -->
+    <header class="newspaper-masthead">
+        <div class="newspaper-top-bar">
+            <div class="newspaper-vol">VOL. {{currentYear}}</div>
+            <div class="newspaper-date">MONDAY, OCTOBER 27, {{currentYear}}</div>
+        </div>
+        <h1 class="newspaper-main-title">{{authorName}}</h1>
+        <p class="newspaper-tagline">{{tagline}}</p>
+        <div class="newspaper-lines"></div>
+    </header>
 
-        <article class="newspaper-article">
-            <div class="newspaper-columns">
-                <div class="newspaper-col">
-                    <h2>About the Author</h2>
-                    <p>{{authorBio}}</p>
-                    {{#if extendedBio}}
-                    <div class="newspaper-extended">{{{extendedBio}}}</div>
+    <!-- Navigation -->
+    <nav class="newspaper-nav">
+        <div class="newspaper-nav-container">
+            <a href="index.html" class="newspaper-nav-tab active">FEATURE STORY</a>
+            <a href="books.html" class="newspaper-nav-tab">LITERARY WORKS</a>
+            <a href="story.html" class="newspaper-nav-tab">EDITORIAL</a>
+            <a href="index.html#life" class="newspaper-nav-tab">LIFE & ARTS</a>
+            <a href="contact.html" class="newspaper-nav-tab">CONTACT</a>
+        </div>
+        <div class="newspaper-divider-lines"></div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="newspaper-feature">
+        <div class="newspaper-section-header">
+            <div class="newspaper-icon-box">📄</div>
+            <h2 class="newspaper-section-title">FEATURED AUTHOR PROFILE</h2>
+        </div>
+
+        <div class="newspaper-content-split">
+            <div class="newspaper-article-column">
+                <div class="newspaper-drop-cap">A</div>
+                <p class="newspaper-article-text">{{authorBio}}</p>
+                <a href="story.html" class="newspaper-continue">CONTINUE READING →</a>
+            </div>
+            <div class="newspaper-author-box">
+                {{#if authorPhoto}}
+                <img src="{{authorPhoto}}" alt="{{authorName}}" class="newspaper-author-img">
+                {{else}}
+                <div class="newspaper-author-placeholder">{{authorInitials}}</div>
+                {{/if}}
+            </div>
+        </div>
+    </section>
+
+    {{#if showCurrentWork}}
+    <!-- Latest Project -->
+    <section class="newspaper-projects">
+        <div class="newspaper-project-box">
+            <p class="newspaper-label-text">LATEST PROJECT</p>
+            <h2 class="newspaper-project-title">{{currentWorkTitle}}</h2>
+            <p class="newspaper-project-text">{{currentWorkDescription}}</p>
+        </div>
+    </section>
+    {{/if}}
+
+    {{#if hasBooks}}
+    <!-- Literary Works -->
+    <section class="newspaper-works-section">
+        <div class="newspaper-works-header">
+            <div class="newspaper-divider-lines"></div>
+            <h2 class="newspaper-works-title">LITERARY WORKS</h2>
+            <p class="newspaper-works-subtitle">PUBLISHED COLLECTION</p>
+            <div class="newspaper-divider-thin"></div>
+        </div>
+
+        <div class="newspaper-books-grid">
+            {{#each featuredBooks}}
+            <div class="newspaper-book-card">
+                <div class="newspaper-book-cover-block">
+                    {{#if cover}}
+                    <img src="{{cover}}" alt="{{title}}" class="newspaper-book-cover-img">
+                    {{else}}
+                    <div class="newspaper-book-cover-placeholder">Cover</div>
                     {{/if}}
                 </div>
+                <h3 class="newspaper-book-title-style">{{title}}</h3>
+                <div class="newspaper-book-line"></div>
+            </div>
+            {{/each}}
+        </div>
 
-                <div class="newspaper-col">
-                    {{#if hasBooks}}
-                    <h2>Published Works</h2>
-                    <div class="newspaper-books">
-                        {{#each featuredBooks}}
-                        <div class="newspaper-book">
-                            <strong>{{title}}</strong>
-                            <span>{{publishDate}}</span>
-                        </div>
+        <div class="newspaper-bibliography-section">
+            <h2 class="newspaper-biblio-title">COMPLETE BIBLIOGRAPHY</h2>
+            <p class="newspaper-biblio-subtitle">PUBLISHED WORKS & EDITIONS</p>
+            <div class="newspaper-biblio-divider"></div>
+
+            <div class="newspaper-biblio-content">
+                <div class="newspaper-biblio-featured">
+                    <div class="newspaper-featured-box">FEATURED</div>
+                </div>
+                <div class="newspaper-biblio-details">
+                    <p class="newspaper-biblio-label">LATEST RELEASE</p>
+                    <h3 class="newspaper-biblio-book-title">{{#if featuredBooks.0}}{{featuredBooks.0.title}}{{else}}Book Title{{/if}}</h3>
+                    <p class="newspaper-biblio-published">| PUBLISHED {{#if featuredBooks.0}}{{featuredBooks.0.publishDate}}{{else}}2024{{/if}}</p>
+                    <p class="newspaper-biblio-description">{{#if featuredBooks.0}}{{featuredBooks.0.description}}{{/if}}</p>
+                    <div class="newspaper-biblio-line"></div>
+                    <p class="newspaper-purchase-label">PURCHASE OPTIONS:</p>
+                    {{#if featuredBooks.0.buyLinks}}
+                    <div class="newspaper-purchase-buttons">
+                        {{#each featuredBooks.0.buyLinks}}
+                        <a href="{{url}}" target="_blank" rel="noopener" class="newspaper-purchase-btn">{{name}} ↗</a>
                         {{/each}}
                     </div>
                     {{/if}}
+                </div>
+            </div>
+        </div>
+    </section>
+    {{/if}}
 
-                    {{#if showCurrentWork}}
-                    <div class="newspaper-box">
-                        <h3>Current Work</h3>
-                        <h4>{{currentWorkTitle}}</h4>
-                        <p>{{currentWorkDescription}}</p>
-                    </div>
+    {{#if hasHobbies}}
+    <!-- Life & Arts Section -->
+    <section class="newspaper-life-section" id="life">
+        <div class="newspaper-divider-lines"></div>
+        <h2 class="newspaper-life-title">LIFE & ARTS</h2>
+        <p class="newspaper-life-subtitle">Beyond the written word: Personal pursuits and passions</p>
+        <div class="newspaper-life-grid">
+            {{#each hobbies}}
+            <div class="newspaper-life-card">
+                <div class="newspaper-life-header">
+                    <div class="newspaper-life-icon">●</div>
+                    <h3 class="newspaper-life-title-card">{{title}}</h3>
+                </div>
+                <div class="newspaper-life-content">
+                    <p>{{description}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Footer -->
+    <footer class="newspaper-footer">
+        <div class="newspaper-footer-content">
+            <div class="newspaper-footer-left">
+                <h3 class="newspaper-footer-name">ARJUN SINGH</h3>
+                <p class="newspaper-footer-tag">{{tagline}}</p>
+            </div>
+            <div class="newspaper-footer-right">
+                <p class="newspaper-connect-label">CONNECT</p>
+                <div class="newspaper-social-grid">
+                    {{#if hasSocial}}
+                    {{#if social.twitter}}<a href="https://twitter.com/{{social.twitter}}" target="_blank" rel="noopener" class="newspaper-social-link">TWITTER →</a>{{/if}}
+                    {{#if social.facebook}}<a href="{{social.facebook}}" target="_blank" rel="noopener" class="newspaper-social-link">FACEBOOK →</a>{{/if}}
+                    {{#if social.instagram}}<a href="https://instagram.com/{{social.instagram}}" target="_blank" rel="noopener" class="newspaper-social-link">INSTAGRAM →</a>{{/if}}
+                    {{#if social.linkedin}}<a href="{{social.linkedin}}" target="_blank" rel="noopener" class="newspaper-social-link">GOODREADS →</a>{{/if}}
                     {{/if}}
                 </div>
             </div>
+        </div>
+        <div class="newspaper-footer-line"></div>
+        <p class="newspaper-copyright">© {{currentYear}} ARJUN SINGH • ALL RIGHTS RESERVED • EST. 2025</p>
+    </footer>
 
-            {{#if authorPhoto}}
-            <div class="newspaper-photo">
-                <img src="{{authorPhoto}}" alt="{{authorName}}">
-                <p class="newspaper-caption">{{authorName}}</p>
-            </div>
-            {{/if}}
-        </article>
-
-        <footer class="newspaper-footer">
-            <p>&copy; {{currentYear}} {{authorName}}</p>
-        </footer>
-    </div>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

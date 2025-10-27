@@ -4,74 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arjun Singh - Author</title>
+    <meta name="description" content="Bestselling Action Author">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="newspaper">
-        <header class="newspaper-header">
-            <div class="newspaper-masthead">
-                <h1 class="newspaper-name">Arjun Singh</h1>
-                <p class="newspaper-tag">Bestselling Action Author</p>
-            </div>
-            <nav class="newspaper-nav">
-                <a href="index.html">About</a>
-                <a href="books.html">Books</a>
-                <a href="story.html">Story</a>
-                
-                <a href="blogs.html">Blog</a>
-                
-                <a href="contact.html">Contact</a>
-            </nav>
-        </header>
+    <!-- Masthead -->
+    <header class="newspaper-masthead">
+        <div class="newspaper-top-bar">
+            <div class="newspaper-vol">VOL. 2025</div>
+            <div class="newspaper-date">MONDAY, OCTOBER 27, 2025</div>
+        </div>
+        <h1 class="newspaper-main-title">Arjun Singh</h1>
+        <p class="newspaper-tagline">Bestselling Action Author</p>
+        <div class="newspaper-lines"></div>
+    </header>
 
-        <article class="newspaper-article">
-            <div class="newspaper-columns">
-                <div class="newspaper-col">
-                    <h2>About the Author</h2>
-                    <p>Award-winning author of 8 novels, Arjun has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p>
+    <!-- Navigation -->
+    <nav class="newspaper-nav">
+        <div class="newspaper-nav-container">
+            <a href="index.html" class="newspaper-nav-tab active">FEATURE STORY</a>
+            <a href="books.html" class="newspaper-nav-tab">LITERARY WORKS</a>
+            <a href="story.html" class="newspaper-nav-tab">EDITORIAL</a>
+            <a href="index.html#life" class="newspaper-nav-tab">LIFE & ARTS</a>
+            <a href="contact.html" class="newspaper-nav-tab">CONTACT</a>
+        </div>
+        <div class="newspaper-divider-lines"></div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="newspaper-feature">
+        <div class="newspaper-section-header">
+            <div class="newspaper-icon-box">📄</div>
+            <h2 class="newspaper-section-title">FEATURED AUTHOR PROFILE</h2>
+        </div>
+
+        <div class="newspaper-content-split">
+            <div class="newspaper-article-column">
+                <div class="newspaper-drop-cap">A</div>
+                <p class="newspaper-article-text">Award-winning author of 8 novels, Arjun has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p>
+                <a href="story.html" class="newspaper-continue">CONTINUE READING →</a>
+            </div>
+            <div class="newspaper-author-box">
+                
+                <img src="assets/images/author.png" alt="Arjun Singh" class="newspaper-author-img">
+                
+                <div class="newspaper-author-placeholder">AS</div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Project -->
+    <section class="newspaper-projects">
+        <div class="newspaper-project-box">
+            <p class="newspaper-label-text">LATEST PROJECT</p>
+            <h2 class="newspaper-project-title">The Final Chapter</h2>
+            <p class="newspaper-project-text">A thrilling new adventure exploring themes of courage, friendship, and second chances. This book represents a new direction incorporating magical realism with contemporary themes.</p>
+        </div>
+    </section>
+
+    <!-- Literary Works -->
+    <section class="newspaper-works-section">
+        <div class="newspaper-works-header">
+            <div class="newspaper-divider-lines"></div>
+            <h2 class="newspaper-works-title">LITERARY WORKS</h2>
+            <p class="newspaper-works-subtitle">PUBLISHED COLLECTION</p>
+            <div class="newspaper-divider-thin"></div>
+        </div>
+
+        <div class="newspaper-books-grid">
+            
+            <div class="newspaper-book-card">
+                <div class="newspaper-book-cover-block">
                     
-                    <div class="newspaper-extended"><p>Award-winning author of 8 novels, John Doe has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p></div>
+                    <img src="assets/images/book-1.jpg" alt="Summer Dreams" class="newspaper-book-cover-img">
+                    
+                    <div class="newspaper-book-cover-placeholder">Cover</div>
                     
                 </div>
-
-                <div class="newspaper-col">
-                    
-                    <h2>Published Works</h2>
-                    <div class="newspaper-books">
-                        
-                        <div class="newspaper-book">
-                            <strong>Summer Dreams</strong>
-                            <span>1/1/1999</span>
-                        </div>
-                        
-                        <div class="newspaper-book">
-                            <strong>Winter Tales</strong>
-                            <span>2/2/1999</span>
-                        </div>
-                        
-                    </div>
-
-                    <div class="newspaper-box">
-                        <h3>Current Work</h3>
-                        <h4>The Final Chapter</h4>
-                        <p>A thrilling new adventure exploring themes of courage, friendship, and second chances. This book represents a new direction incorporating magical realism with contemporary themes.</p>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="newspaper-photo">
-                <img src="assets/images/author.png" alt="Arjun Singh">
-                <p class="newspaper-caption">Arjun Singh</p>
+                <h3 class="newspaper-book-title-style">Summer Dreams</h3>
+                <div class="newspaper-book-line"></div>
             </div>
             
-        </article>
+            <div class="newspaper-book-card">
+                <div class="newspaper-book-cover-block">
+                    
+                    <img src="assets/images/book-2.jpg" alt="Winter Tales" class="newspaper-book-cover-img">
+                    
+                    <div class="newspaper-book-cover-placeholder">Cover</div>
+                    
+                </div>
+                <h3 class="newspaper-book-title-style">Winter Tales</h3>
+                <div class="newspaper-book-line"></div>
+            </div>
+            
+        </div>
 
-        <footer class="newspaper-footer">
-            <p>&copy; 2025 Arjun Singh</p>
-        </footer>
-    </div>
+        <div class="newspaper-bibliography-section">
+            <h2 class="newspaper-biblio-title">COMPLETE BIBLIOGRAPHY</h2>
+            <p class="newspaper-biblio-subtitle">PUBLISHED WORKS & EDITIONS</p>
+            <div class="newspaper-biblio-divider"></div>
+
+            <div class="newspaper-biblio-content">
+                <div class="newspaper-biblio-featured">
+                    <div class="newspaper-featured-box">FEATURED</div>
+                </div>
+                <div class="newspaper-biblio-details">
+                    <p class="newspaper-biblio-label">LATEST RELEASE</p>
+                    <h3 class="newspaper-biblio-book-title">{{featuredBooks.0.title}}</h3>
+                    <p class="newspaper-biblio-published">| PUBLISHED {{featuredBooks.0.publishDate}}</p>
+                    <p class="newspaper-biblio-description">{{featuredBooks.0.description}}</p>
+                    <div class="newspaper-biblio-line"></div>
+                    <p class="newspaper-purchase-label">PURCHASE OPTIONS:</p>
+                    
+                    <div class="newspaper-purchase-buttons">
+                        
+                        <a href="" target="_blank" rel="noopener" class="newspaper-purchase-btn"> ↗</a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Life & Arts Section -->
+    <section class="newspaper-life-section" id="life">
+        <div class="newspaper-divider-lines"></div>
+        <h2 class="newspaper-life-title">LIFE & ARTS</h2>
+        <p class="newspaper-life-subtitle">Beyond the written word: Personal pursuits and passions</p>
+        <div class="newspaper-life-grid">
+            
+            <div class="newspaper-life-card">
+                <div class="newspaper-life-header">
+                    <div class="newspaper-life-icon">●</div>
+                    <h3 class="newspaper-life-title-card">Reading</h3>
+                </div>
+                <div class="newspaper-life-content">
+                    <p>I'm an avid reader who believes great writers are first great readers. I enjoy exploring different genres and discovering new voices that challenge my perspective.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="newspaper-footer">
+        <div class="newspaper-footer-content">
+            <div class="newspaper-footer-left">
+                <h3 class="newspaper-footer-name">ARJUN SINGH</h3>
+                <p class="newspaper-footer-tag">Bestselling Action Author</p>
+            </div>
+            <div class="newspaper-footer-right">
+                <p class="newspaper-connect-label">CONNECT</p>
+                <div class="newspaper-social-grid">
+                    
+                    <a href="https://twitter.com/arjunfrisky" target="_blank" rel="noopener" class="newspaper-social-link">TWITTER →</a>
+                    <a href="https://www.facebook.com/arjun" target="_blank" rel="noopener" class="newspaper-social-link">FACEBOOK →</a>
+                    <a href="https://instagram.com/arjunfrisky" target="_blank" rel="noopener" class="newspaper-social-link">INSTAGRAM →</a>
+                    <a href="https://www.linkedin.com/arjun" target="_blank" rel="noopener" class="newspaper-social-link">GOODREADS →</a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="newspaper-footer-line"></div>
+        <p class="newspaper-copyright">© 2025 ARJUN SINGH • ALL RIGHTS RESERVED • EST. 2025</p>
+    </footer>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>

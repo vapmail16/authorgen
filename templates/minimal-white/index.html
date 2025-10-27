@@ -11,117 +11,148 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Minimal Navigation -->
-    <nav class="minimal-nav">
-        <div class="nav-content">
-            <a href="index.html" class="nav-logo">{{authorName}}</a>
-            <div class="nav-links">
-                <a href="index.html" class="nav-link active">About</a>
-                <a href="books.html" class="nav-link">Books</a>
-                <a href="story.html" class="nav-link">Story</a>
+    <!-- Navigation Header -->
+    <nav class="minimal-header">
+        <div class="minimal-nav">
+            <a href="index.html" class="logo-minimal">{{authorName}}</a>
+            <div class="nav-links-minimal">
+                <a href="index.html">About</a>
+                <a href="books.html">Books</a>
+                <a href="story.html">My Story</a>
                 {{#if showBlogs}}
-                <a href="blogs.html" class="nav-link">Blog</a>
+                <a href="blogs.html">Blog</a>
                 {{/if}}
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="contact.html">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Full-Width Hero -->
-    <header class="hero-banner">
-        <div class="hero-content">
+    <!-- Hero Section -->
+    <section class="hero-minimal">
+        <div class="hero-content-minimal">
             {{#if authorPhoto}}
-            <div class="author-avatar">
+            <div class="profile-icon">
                 <img src="{{authorPhoto}}" alt="{{authorName}}">
             </div>
+            {{else}}
+            <div class="profile-icon-placeholder">
+                <span>{{authorInitials}}</span>
+            </div>
             {{/if}}
-            <h1>{{authorName}}</h1>
-            <p class="tagline">{{tagline}}</p>
+            <h1 class="hero-name">{{authorName}}</h1>
+            <p class="hero-tagline-minimal">{{tagline}}</p>
+            <p class="hero-bio-minimal">{{authorBio}}</p>
+            <div class="hero-buttons-minimal">
+                <a href="books.html" class="btn-minimal">Explore My Books</a>
+                <a href="contact.html" class="btn-minimal">Get In Touch</a>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Main Content - Single Column -->
-    <main class="content-main">
-        <!-- Bio Section -->
-        <section class="content-section bio-section">
-            <div class="section-inner">
-                <h2>About</h2>
-                <p>{{authorBio}}</p>
-                {{#if extendedBio}}
-                <div class="extended-bio">{{{extendedBio}}}</div>
-                {{/if}}
-            </div>
-        </section>
+    {{#if showCurrentWork}}
+    <!-- Currently Working On Section -->
+    <section class="working-on-minimal">
+        <div class="working-content">
+            <p class="working-label">CURRENTLY WORKING ON</p>
+            <h2 class="working-title">{{currentWorkTitle}}</h2>
+            <p class="working-description">{{currentWorkDescription}}</p>
+            <a href="books.html" class="btn-minimal btn-learn">Learn More</a>
+        </div>
+    </section>
+    {{/if}}
 
-        {{#if hasBooks}}
-        <!-- Books Section - Horizontal Cards -->
-        <section class="content-section books-section">
-            <div class="section-inner">
-                <h2>My Books</h2>
-                <div class="books-horizontal">
-                    {{#each featuredBooks}}
-                    <div class="book-item-minimal">
+    <!-- About Section -->
+    <section class="about-minimal">
+        <div class="about-content">
+            <h2 class="about-title">About</h2>
+            <p class="about-bio">{{authorBio}}</p>
+            {{#if extendedBio}}
+            <div class="extended-bio-content">{{{extendedBio}}}</div>
+            <a href="story.html" class="read-more-link">Read More <span>▼</span></a>
+            {{/if}}
+        </div>
+    </section>
+
+    {{#if hasBooks}}
+    <!-- Featured Books Section -->
+    <section class="featured-books-minimal">
+        <div class="books-container">
+            <h2 class="section-title-minimal">Featured Books</h2>
+            <div class="books-grid-minimal">
+                {{#each featuredBooks}}
+                <div class="book-card-minimal">
+                    <div class="book-cover-minimal">
                         {{#if cover}}
-                        <img src="{{cover}}" alt="{{title}}" class="book-img">
+                        <img src="{{cover}}" alt="{{title}}">
+                        {{else}}
+                        <div class="cover-placeholder">Book Cover</div>
                         {{/if}}
-                        <div class="book-info-minimal">
-                            <h3>{{title}}</h3>
-                            <p class="book-date-minimal">{{publishDate}}</p>
-                        </div>
                     </div>
-                    {{/each}}
-                </div>
-                <a href="books.html" class="link-more">View All Books →</a>
-            </div>
-        </section>
-        {{/if}}
-
-        {{#if showCurrentWork}}
-        <!-- Current Work -->
-        <section class="content-section work-section">
-            <div class="section-inner">
-                <h2>Current Work</h2>
-                <h3>{{currentWorkTitle}}</h3>
-                <p>{{currentWorkDescription}}</p>
-            </div>
-        </section>
-        {{/if}}
-
-        {{#if hasHobbies}}
-        <!-- Hobbies - Simple List -->
-        <section class="content-section hobbies-section">
-            <div class="section-inner">
-                <h2>Beyond Writing</h2>
-                <div class="hobbies-list">
-                    {{#each hobbies}}
-                    <div class="hobby-item-minimal">
-                        <h4>{{title}}</h4>
-                        <p>{{description}}</p>
+                    <h3 class="book-title-minimal">{{title}}</h3>
+                    <p class="book-year">{{publishDate}}</p>
+                    <p class="book-desc-minimal">{{description}}</p>
+                    {{#if buyLinks}}
+                    <div class="book-links-minimal">
+                        {{#each buyLinks}}
+                        <a href="{{url}}" target="_blank" rel="noopener">{{name}} ↗</a>
+                        {{/each}}
                     </div>
-                    {{/each}}
+                    {{/if}}
                 </div>
+                {{/each}}
             </div>
-        </section>
-        {{/if}}
-    </main>
+            <div class="view-all-button">
+                <a href="books.html" class="btn-minimal">View All Books</a>
+            </div>
+        </div>
+    </section>
+    {{/if}}
+
+    {{#if hasHobbies}}
+    <!-- Hobbies & Interests Section -->
+    <section class="hobbies-minimal">
+        <div class="hobbies-container">
+            <h2 class="section-title-minimal">Hobbies & Interests</h2>
+            <div class="hobbies-grid-minimal">
+                {{#each hobbies}}
+                <div class="hobby-card-minimal">
+                    <div class="hobby-icon-minimal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="hobby-title-minimal">{{title}}</h3>
+                    <p class="hobby-desc-minimal">{{description}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    {{/if}}
 
     <!-- Footer -->
-    <footer class="footer-minimal">
+    <footer class="footer-minimal-page">
         <div class="footer-content">
-            <p>&copy; {{currentYear}} {{authorName}}</p>
+            <h3 class="footer-name-minimal">{{authorName}}</h3>
+            <p class="footer-tagline-minimal">{{tagline}}</p>
             {{#if hasSocial}}
-            <div class="social-minimal">
+            <div class="social-links-minimal">
                 {{#if social.twitter}}
-                <a href="https://twitter.com/{{social.twitter}}" target="_blank">Twitter</a>
+                <a href="https://twitter.com/{{social.twitter}}" target="_blank" rel="noopener">Twitter</a>
                 {{/if}}
                 {{#if social.instagram}}
-                <a href="https://instagram.com/{{social.instagram}}" target="_blank">Instagram</a>
+                <a href="https://instagram.com/{{social.instagram}}" target="_blank" rel="noopener">Instagram</a>
+                {{/if}}
+                {{#if social.facebook}}
+                <a href="{{social.facebook}}" target="_blank" rel="noopener">Facebook</a>
                 {{/if}}
                 {{#if social.linkedin}}
-                <a href="{{social.linkedin}}" target="_blank">LinkedIn</a>
+                <a href="{{social.linkedin}}" target="_blank" rel="noopener">Goodreads</a>
                 {{/if}}
             </div>
             {{/if}}
+            <p class="copyright-minimal">&copy; {{currentYear}} {{authorName}}. All rights reserved.</p>
         </div>
     </footer>
 

@@ -4,87 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{authorName}} - Author</title>
+    <meta name="description" content="{{tagline}}">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="portfolio">
-        <!-- Asymmetric Navigation -->
-        <nav class="portfolio-nav">
-            <div class="portfolio-nav-top">
-                <h1>{{authorName}}</h1>
-                <div class="portfolio-nav-links">
-                    <a href="books.html">Books</a>
-                    <a href="story.html">Story</a>
-                    {{#if showBlogs}}
-                    <a href="blogs.html">Blog</a>
-                    {{/if}}
-                    <a href="contact.html">Contact</a>
+    <!-- Navigation -->
+    <nav class="artistic-nav">
+        <div class="artistic-nav-container">
+            <a href="index.html" class="artistic-nav-btn active">Home</a>
+            <a href="index.html#about" class="artistic-nav-btn">About</a>
+            <a href="books.html" class="artistic-nav-btn">Gallery</a>
+            <a href="story.html" class="artistic-nav-btn">Journey</a>
+            <a href="contact.html" class="artistic-nav-btn">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Split Layout -->
+    <section class="artistic-hero">
+        <div class="artistic-hero-split">
+            <div class="artistic-left-content">
+                <div class="artistic-star">★</div>
+                <h1 class="artistic-name-gradient">{{authorName}}</h1>
+                <p class="artistic-tagline-blue">{{tagline}}</p>
+                <p class="artistic-bio-text">{{authorBio}}</p>
+                <div class="artistic-hero-buttons">
+                    <a href="books.html" class="artistic-btn-gradient">Explore My Universe</a>
+                    <a href="contact.html" class="artistic-btn-outline">Let's Connect</a>
                 </div>
             </div>
-        </nav>
-
-        <!-- Creative Hero -->
-        <section class="portfolio-hero">
-            <div class="portfolio-hero-grid">
-                <div class="portfolio-hero-left">
-                    <h1 class="portfolio-title">{{authorName}}</h1>
-                    <p class="portfolio-tagline">{{tagline}}</p>
-                    <div class="portfolio-description">
-                        {{authorBio}}
-                    </div>
-                </div>
-                <div class="portfolio-hero-right">
+            <div class="artistic-right-content">
+                <div class="artistic-phone-frame">
                     {{#if authorPhoto}}
-                    <div class="portfolio-photo">
-                        <img src="{{authorPhoto}}" alt="{{authorName}}">
-                    </div>
+                    <img src="{{authorPhoto}}" alt="{{authorName}}" class="artistic-avatar-img">
+                    {{else}}
+                    <div class="artistic-avatar-gradient">{{authorInitials}}</div>
                     {{/if}}
-                </div>
-            </div>
-        </section>
-
-        {{#if hasBooks}}
-        <!-- Books Grid -->
-        <section class="portfolio-works">
-            <h2 class="portfolio-section-title">Published Works</h2>
-            <div class="portfolio-grid">
-                {{#each featuredBooks}}
-                <div class="portfolio-item">
-                    <div class="portfolio-cover">
-                        {{#if cover}}
-                        <img src="{{cover}}" alt="{{title}}">
-                        {{else}}
-                        <div class="portfolio-placeholder">
-                            <span>{{title}}</span>
-                        </div>
+                    {{#if showCurrentWork}}
+                    <div class="artistic-now-creating">
+                        <span class="artistic-dot">●</span> NOW CREATING
+                    </div>
+                    <h2 class="artistic-phone-title">{{currentWorkTitle}}</h2>
+                    <p class="artistic-phone-text">{{currentWorkDescription}}</p>
+                    <div class="artistic-social-popup">
+                        {{#if hasSocial}}
+                        {{#if social.twitter}}<a href="https://twitter.com/{{social.twitter}}" target="_blank" rel="noopener">Twitter →</a>{{/if}}
+                        {{#if social.instagram}}<a href="https://instagram.com/{{social.instagram}}" target="_blank" rel="noopener">Instagram →</a>{{/if}}
+                        {{#if social.facebook}}<a href="{{social.facebook}}" target="_blank" rel="noopener">Facebook →</a>{{/if}}
                         {{/if}}
                     </div>
-                    <div class="portfolio-info">
-                        <h3>{{title}}</h3>
-                        <p class="portfolio-year">{{publishDate}}</p>
-                    </div>
+                    {{/if}}
                 </div>
-                {{/each}}
             </div>
-        </section>
-        {{/if}}
+        </div>
+    </section>
 
-        {{#if showCurrentWork}}
-        <section class="portfolio-project">
-            <div class="portfolio-project-box">
-                <h2>Current Project</h2>
-                <h3>{{currentWorkTitle}}</h3>
-                <p>{{currentWorkDescription}}</p>
+    {{#if hasBooks}}
+    <!-- Literary Gallery -->
+    <section class="artistic-gallery-section">
+        <h2 class="artistic-gradient-title">Literary Gallery</h2>
+        <p class="artistic-gallery-subtitle">Curated collection of published works</p>
+        <div class="artistic-books-grid">
+            {{#each featuredBooks}}
+            <div class="artistic-book-card-side">
+                <div class="artistic-book-cover-side">
+                    {{#if cover}}
+                    <img src="{{cover}}" alt="{{title}}" class="artistic-cover-img">
+                    {{else}}
+                    <div class="artistic-cover-placeholder-grad">Featured</div>
+                    {{/if}}
+                </div>
+                <div class="artistic-book-info-side">
+                    <div class="artistic-spotlight-badge">SPOTLIGHT</div>
+                    <h3 class="artistic-book-title-side">{{title}}</h3>
+                    <p class="artistic-book-year-side">{{publishDate}}</p>
+                    <p class="artistic-book-desc-side">{{description}}</p>
+                    {{#if buyLinks}}
+                    <div class="artistic-purchase-links-side">
+                        {{#each buyLinks}}
+                        <a href="{{url}}" target="_blank" rel="noopener" class="artistic-purchase-link-btn">{{name}} ↗</a>
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                </div>
             </div>
-        </section>
-        {{/if}}
+            {{/each}}
+        </div>
+    </section>
+    {{/if}}
 
-        <footer class="portfolio-footer">
-            <div class="portfolio-footer-line"></div>
-            <p>&copy; {{currentYear}} {{authorName}}</p>
-        </footer>
-    </div>
+    {{#if hasHobbies}}
+    <!-- Beyond Words - Interests -->
+    <section class="artistic-interests-section">
+        <h2 class="artistic-gradient-title-alt">Beyond Words</h2>
+        <p class="artistic-interests-subtitle">Creative pursuits & personal passions</p>
+        <div class="artistic-interests-grid">
+            {{#each hobbies}}
+            <div class="artistic-interest-card">
+                <div class="artistic-interest-icon">●</div>
+                <h3 class="artistic-interest-title">{{title}}</h3>
+                <p class="artistic-interest-text">{{description}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Footer -->
+    <footer class="artistic-footer">
+        <div class="artistic-footer-content">
+            <div class="artistic-footer-left">
+                <h3 class="artistic-footer-name-gradient">{{authorName}}</h3>
+                <p class="artistic-footer-tag">{{tagline}}</p>
+                <a href="contact.html" class="artistic-footer-btn">Start a Conversation</a>
+            </div>
+            <div class="artistic-footer-right">
+                <p class="artistic-connect-label">CONNECT WITH ME</p>
+                <div class="artistic-social-grid">
+                    {{#if hasSocial}}
+                    {{#if social.twitter}}<a href="https://twitter.com/{{social.twitter}}" target="_blank" rel="noopener" class="artistic-social-grid-btn">Twitter</a>{{/if}}
+                    {{#if social.instagram}}<a href="https://instagram.com/{{social.instagram}}" target="_blank" rel="noopener" class="artistic-social-grid-btn">Instagram</a>{{/if}}
+                    {{#if social.facebook}}<a href="{{social.facebook}}" target="_blank" rel="noopener" class="artistic-social-grid-btn">Facebook</a>{{/if}}
+                    {{#if social.linkedin}}<a href="{{social.linkedin}}" target="_blank" rel="noopener" class="artistic-social-grid-btn">Goodreads</a>{{/if}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        <div class="artistic-footer-bottom">
+            <p class="artistic-copyright">© {{currentYear}} {{authorName}}. Crafted with creativity.</p>
+        </div>
+    </footer>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>

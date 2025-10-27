@@ -4,79 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{authorName}} - Author</title>
+    <meta name="description" content="{{tagline}}">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="tech-container">
-        <!-- Tech Navigation -->
-        <nav class="tech-nav">
-            <div class="tech-nav-left">⟨{{authorName}}⟩</div>
-            <div class="tech-nav-right">
-                <a href="index.html">[About]</a>
-                <a href="books.html">[Books]</a>
-                <a href="story.html">[Story]</a>
+    <!-- Tech Header -->
+    <nav class="tech-nav">
+        <div class="tech-nav-container">
+            <div class="tech-prompt">>_ {{authorName}}</div>
+            <div class="tech-menu">
+                <a href="index.html">[about]</a>
+                <a href="books.html">[books]</a>
+                <a href="story.html">[story]</a>
                 {{#if showBlogs}}
-                <a href="blogs.html">[Blog]</a>
+                <a href="blogs.html">[blog]</a>
                 {{/if}}
-                <a href="contact.html">[Contact]</a>
+                <a href="contact.html">[contact]</a>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <!-- Tech Hero -->
-        <section class="tech-hero">
-            <div class="tech-hero-grid">
-                <div class="tech-hero-left">
-                    <h1 class="tech-title">{{authorName}}</h1>
-                    <p class="tech-tagline">{{tagline}}</p>
-                    <div class="tech-bio">{{authorBio}}</div>
-                </div>
-                <div class="tech-hero-right">
-                    {{#if authorPhoto}}
-                    <div class="tech-photo">
-                        <img src="{{authorPhoto}}" alt="{{authorName}}">
-                    </div>
-                    {{/if}}
+    <!-- Hero Section - Split Layout -->
+    <section class="tech-hero">
+        <div class="tech-hero-grid">
+            <div class="tech-hero-left">
+                <div class="tech-avatar-box">
+                    <div class="tech-initials">{{authorInitials}}</div>
                 </div>
             </div>
-        </section>
+            <div class="tech-hero-right">
+                <div class="tech-label">> author.name</div>
+                <h1 class="tech-author-name">{{authorName}}</h1>
+                <p class="tech-comment">// {{tagline}}</p>
+                <p class="tech-bio">{{authorBio}}</p>
+                <div class="tech-buttons">
+                    <a href="books.html" class="tech-btn-primary">explore_books()</a>
+                    <a href="contact.html" class="tech-btn-secondary">contact()</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        {{#if hasBooks}}
-        <section class="tech-books">
-            <h2 class="tech-section-heading">├ Published Works │</h2>
-            <div class="tech-books-grid">
-                {{#each featuredBooks}}
-                <div class="tech-book-card">
+    {{#if showCurrentWork}}
+    <!-- Current Project Section -->
+    <section class="tech-section tech-current">
+        <div class="tech-box">
+            <div class="tech-tag">&lt;current-project&gt;</div>
+            <h2 class="tech-title">{{currentWorkTitle}}</h2>
+            <p class="tech-description">{{currentWorkDescription}}</p>
+            <a href="books.html" class="tech-btn-link">learn_more()</a>
+            <div class="tech-tag tech-tag-close">&lt;/current-project&gt;</div>
+        </div>
+    </section>
+    {{/if}}
+
+    {{#if hasBooks}}
+    <!-- Featured Books Section -->
+    <section class="tech-section tech-books">
+        <div class="tech-section-header">>&lt;books /&gt;</div>
+        <div class="tech-books-grid">
+            {{#each featuredBooks}}
+            <div class="tech-book-card">
+                <div class="tech-book-label">book[{{@index}}]</div>
+                <div class="tech-book-cover">
                     {{#if cover}}
-                    <img src="{{cover}}" alt="{{title}}" class="tech-book-cover">
+                    <img src="{{cover}}" alt="{{title}}">
                     {{else}}
-                    <div class="tech-placeholder">{{title}}</div>
+                    <div class="tech-cover-placeholder">cover.jpg</div>
                     {{/if}}
-                    <div class="tech-book-data">
-                        <h3>{{title}}</h3>
-                        <p class="tech-date">{{publishDate}}</p>
-                    </div>
                 </div>
-                {{/each}}
+                <div class="tech-book-info">
+                    <h3 class="tech-book-title">{{title}}</h3>
+                    <p class="tech-book-year">// {{publishDate}}</p>
+                    <p class="tech-book-desc">{{description}}</p>
+                    {{#if buyLinks}}
+                    <div class="tech-book-links">
+                        {{#each buyLinks}}
+                        <a href="{{url}}" target="_blank" rel="noopener" class="tech-link-btn">{{name}}</a>
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                </div>
             </div>
-        </section>
-        {{/if}}
+            {{/each}}
+        </div>
+        <div class="tech-view-all">
+            <a href="books.html" class="tech-btn-large">view_all_books()</a>
+        </div>
+    </section>
+    {{/if}}
 
-        {{#if showCurrentWork}}
-        <section class="tech-work">
-            <h2 class="tech-section-heading">├ Active Project │</h2>
-            <div class="tech-work-box">
-                <h3>{{currentWorkTitle}}</h3>
-                <p>{{currentWorkDescription}}</p>
+    <!-- About Section -->
+    <section class="tech-section tech-about">
+        <div class="tech-section-header">>&lt;about /&gt;</div>
+        <div class="tech-about-content">
+            <p class="tech-about-text">{{authorBio}}</p>
+            {{#if extendedBio}}
+            <a href="story.html" class="tech-expand">expand() <span>▼</span></a>
+            {{/if}}
+        </div>
+    </section>
+
+    {{#if hasHobbies}}
+    <!-- Hobbies Section -->
+    <section class="tech-section tech-hobbies">
+        <div class="tech-section-header">>&lt;hobbies /&gt;</div>
+        <div class="tech-hobbies-grid">
+            {{#each hobbies}}
+            <div class="tech-hobby-card">
+                <div class="tech-hobby-label">hobby[{{@index}}]</div>
+                <div class="tech-hobby-icon">▢</div>
+                <h3 class="tech-hobby-title">{{title}}</h3>
+                <p class="tech-hobby-desc">{{description}}</p>
             </div>
-        </section>
-        {{/if}}
+            {{/each}}
+        </div>
+    </section>
+    {{/if}}
 
-        <footer class="tech-footer">
-            <div class="tech-footer-line"></div>
-            <p>&copy; {{currentYear}} {{authorName}}</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="tech-footer">
+        <div class="tech-footer-content">
+            <div class="tech-footer-left">
+                <div class="tech-footer-name">{{authorName}}</div>
+                <div class="tech-footer-comment">// {{tagline}}</div>
+            </div>
+            {{#if hasSocial}}
+            <div class="tech-footer-right">
+                <div class="tech-social-label">social_links[]</div>
+                <div class="tech-social-buttons">
+                    {{#if social.twitter}}
+                    <a href="https://twitter.com/{{social.twitter}}" target="_blank" rel="noopener" class="tech-social-link">twitter</a>
+                    {{/if}}
+                    {{#if social.instagram}}
+                    <a href="https://instagram.com/{{social.instagram}}" target="_blank" rel="noopener" class="tech-social-link">instagram</a>
+                    {{/if}}
+                    {{#if social.facebook}}
+                    <a href="{{social.facebook}}" target="_blank" rel="noopener" class="tech-social-link">facebook</a>
+                    {{/if}}
+                    {{#if social.linkedin}}
+                    <a href="{{social.linkedin}}" target="_blank" rel="noopener" class="tech-social-link">goodreads</a>
+                    {{/if}}
+                </div>
+            </div>
+            {{/if}}
+        </div>
+        <div class="tech-footer-bottom">
+            &copy; {{currentYear}} {{authorName}}. All rights reserved.
+        </div>
+    </footer>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>
