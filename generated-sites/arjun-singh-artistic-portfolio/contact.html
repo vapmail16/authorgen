@@ -8,154 +8,98 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav-bar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Arjun Singh</a>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">About</a>
-                <a href="books.html" class="nav-link">Books</a>
-                <a href="story.html" class="nav-link">My Story</a>
-                
-                <a href="blogs.html" class="nav-link">Blog</a>
-                
-                <a href="contact.html" class="nav-link active">Contact</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <nav class="artistic-nav">
+        <div class="artistic-nav-container">
+            <a href="index.html" class="artistic-nav-btn">Home</a>
+            <a href="index.html#about" class="artistic-nav-btn">About</a>
+            <a href="books.html" class="artistic-nav-btn">Gallery</a>
+            <a href="story.html" class="artistic-nav-btn">Journey</a>
+            <a href="contact.html" class="artistic-nav-btn active">Contact</a>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="page-header-background"></div>
-        <div class="container">
-            <h1 class="page-title" data-animate="fade-up">Get In Touch</h1>
-            <p class="page-subtitle" data-animate="fade-up" data-delay="100">I'd love to hear from you</p>
+    <!-- Contact Section -->
+    <section class="artistic-gallery-section">
+        <h2 class="artistic-gradient-title-alt">Let's Connect</h2>
+        <p class="artistic-gallery-subtitle">Start a conversation</p>
+        
+        <div class="artistic-books-grid">
+            <div class="artistic-book-card-side">
+                <div class="artistic-book-info-side">
+                    <div class="artistic-spotlight-badge">CONTACT</div>
+                    <h3 class="artistic-book-title-side">Email</h3>
+                    <p class="artistic-book-year-side">arjun87743@gmail.com</p>
+                    <p class="artistic-book-desc-side">Feel free to reach out for collaborations, interviews, or just to say hello.</p>
+                </div>
+            </div>
+            
+            <div class="artistic-book-card-side">
+                <div class="artistic-book-info-side">
+                    <div class="artistic-spotlight-badge">LOCATION</div>
+                    <h3 class="artistic-book-title-side">Based in India</h3>
+                    <p class="artistic-book-year-side">Creative Space</p>
+                    <p class="artistic-book-desc-side">Working from the vibrant creative community in India.</p>
+                </div>
+            </div>
         </div>
-    </section>
-
-    <!-- Contact Content -->
-    <section class="section contact-content">
-        <div class="container-narrow">
-            <div class="contact-grid">
-                <div class="contact-info" data-animate="fade-up">
-                    <h2 class="contact-heading">Let's Connect</h2>
-                    <p class="contact-text">Whether you have a question about my books, want to discuss a project, or just want to say hello, feel free to reach out.</p>
-
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <svg class="icon"><use href="assets/icons/icons.svg#mail"></use></svg>
-                        </div>
-                        <div class="contact-item-content">
-                            <h3>Email</h3>
-                            <a href="mailto:arjun87743@gmail.com" class="text-link">arjun87743@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <svg class="icon"><use href="assets/icons/icons.svg#map-pin"></use></svg>
-                        </div>
-                        <div class="contact-item-content">
-                            <h3>Location</h3>
-                            <p>India</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-social">
-                        <h3>Follow Me</h3>
-                        <div class="social-links">
-                            
-                            <a href="https://twitter.com/arjunfrisky" class="social-link-large" target="_blank" rel="noopener">
-                                <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
-                                <span>Twitter</span>
-                            </a>
-
-                            <a href="https://www.facebook.com/arjun" class="social-link-large" target="_blank" rel="noopener">
-                                <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
-                                <span>Facebook</span>
-                            </a>
-
-                            <a href="https://instagram.com/arjunfrisky" class="social-link-large" target="_blank" rel="noopener">
-                                <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
-                                <span>Instagram</span>
-                            </a>
-
-                            <a href="https://www.linkedin.com/arjun" class="social-link-large" target="_blank" rel="noopener">
-                                <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
-                                <span>LinkedIn</span>
-                            </a>
-                            
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <div class="contact-form-wrapper" data-animate="fade-up" data-delay="200">
-                    <form class="contact-form" action="https://formspree.io/f/arjun87743@gmail.com" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="6" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                    </form>
-                </div>
+        
+        <div class="artistic-interests-section">
+            <h2 class="artistic-gradient-title-alt" style="margin-top: 4rem;">Social</h2>
+            <p class="artistic-interests-subtitle">Connect on social media</p>
+            <div class="artistic-interests-grid">
+                <a href="https://twitter.com/arjunfrisky" target="_blank" rel="noopener" class="artistic-interest-card" style="text-decoration: none; color: inherit;">
+                    <div class="artistic-interest-icon">🐦</div>
+                    <h3 class="artistic-interest-title">Twitter</h3>
+                    <p class="artistic-interest-text">Follow for updates and thoughts on writing.</p>
+                </a>
+                <a href="https://instagram.com/arjunfrisky" target="_blank" rel="noopener" class="artistic-interest-card" style="text-decoration: none; color: inherit;">
+                    <div class="artistic-interest-icon">📷</div>
+                    <h3 class="artistic-interest-title">Instagram</h3>
+                    <p class="artistic-interest-text">Behind-the-scenes of my creative process.</p>
+                </a>
+                <a href="https://www.facebook.com/arjun" target="_blank" rel="noopener" class="artistic-interest-card" style="text-decoration: none; color: inherit;">
+                    <div class="artistic-interest-icon">👥</div>
+                    <h3 class="artistic-interest-title">Facebook</h3>
+                    <p class="artistic-interest-text">Join the community of readers.</p>
+                </a>
+                <a href="https://www.linkedin.com/arjun" target="_blank" rel="noopener" class="artistic-interest-card" style="text-decoration: none; color: inherit;">
+                    <div class="artistic-interest-icon">🔗</div>
+                    <h3 class="artistic-interest-title">LinkedIn</h3>
+                    <p class="artistic-interest-text">Professional updates and articles.</p>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <h3 class="footer-name">Arjun Singh</h3>
-                    <p class="footer-tagline">Bestselling Action Author</p>
-                </div>
-                
-                <div class="footer-social">
+    <footer class="artistic-footer">
+        <div class="artistic-footer-content">
+            <div class="artistic-footer-left">
+                <h3 class="artistic-footer-name-gradient">Arjun Singh</h3>
+                <p class="artistic-footer-tag">Bestselling Action Author</p>
+                <a href="contact.html" class="artistic-footer-btn">Start a Conversation</a>
+            </div>
+            <div class="artistic-footer-right">
+                <p class="artistic-connect-label">CONNECT WITH ME</p>
+                <div class="artistic-social-grid">
                     
-                    <a href="https://twitter.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
-                    </a>
-
-                    <a href="https://www.facebook.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
-                    </a>
-
-                    <a href="https://instagram.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
-                    </a>
-
-                    <a href="https://www.linkedin.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
-                    </a>
+                    <a href="https://twitter.com/arjunfrisky" target="_blank" rel="noopener" class="artistic-social-grid-btn">Twitter</a>
+                    <a href="https://instagram.com/arjunfrisky" target="_blank" rel="noopener" class="artistic-social-grid-btn">Instagram</a>
+                    <a href="https://www.facebook.com/arjun" target="_blank" rel="noopener" class="artistic-social-grid-btn">Facebook</a>
+                    <a href="https://www.linkedin.com/arjun" target="_blank" rel="noopener" class="artistic-social-grid-btn">Goodreads</a>
                     
                 </div>
-                
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Arjun Singh. All rights reserved.</p>
-            </div>
+        </div>
+        <div class="artistic-footer-bottom">
+            <p class="artistic-copyright">© 2025 Arjun Singh. Crafted with creativity.</p>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-

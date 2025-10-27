@@ -3,113 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Story - Arjun Singh</title>
-    <meta name="description" content="Learn about Arjun Singh's journey">
+    <title>Editorial - Arjun Singh</title>
+    <meta name="description" content="The journey behind the words">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav-bar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Arjun Singh</a>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">About</a>
-                <a href="books.html" class="nav-link">Books</a>
-                <a href="story.html" class="nav-link active">My Story</a>
-                
-                <a href="blogs.html" class="nav-link">Blog</a>
-                
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <!-- Masthead -->
+    <header class="newspaper-masthead">
+        <div class="newspaper-top-bar">
+            <div class="newspaper-vol">VOL. 2025</div>
+            <div class="newspaper-date">MONDAY, OCTOBER 27, 2025</div>
         </div>
+        <h1 class="newspaper-main-title">Arjun Singh</h1>
+        <p class="newspaper-tagline">Bestselling Action Author</p>
+        <div class="newspaper-lines"></div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="newspaper-nav">
+        <div class="newspaper-nav-container">
+            <a href="index.html" class="newspaper-nav-tab">FEATURE STORY</a>
+            <a href="books.html" class="newspaper-nav-tab">LITERARY WORKS</a>
+            <a href="story.html" class="newspaper-nav-tab active">EDITORIAL</a>
+            <a href="index.html#life" class="newspaper-nav-tab">LIFE & ARTS</a>
+            <a href="contact.html" class="newspaper-nav-tab">CONTACT</a>
+        </div>
+        <div class="newspaper-divider-lines"></div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="page-header-background"></div>
-        <div class="container">
-            <h1 class="page-title" data-animate="fade-up">My Story</h1>
-            <p class="page-subtitle" data-animate="fade-up" data-delay="100">The journey that shaped me</p>
+    <!-- Editorial Content -->
+    <section class="newspaper-feature">
+        <div class="newspaper-section-header">
+            <div class="newspaper-icon-box">📰</div>
+            <h2 class="newspaper-section-title">EDITORIAL</h2>
         </div>
-    </section>
 
-    <!-- Story Content -->
-    <section class="section story-content">
-        <div class="container-narrow">
-            
-            <div class="story-image" data-animate="fade-up">
-                <img src="assets/images/author.png" alt="Arjun Singh">
-            </div>
-
-            <div class="story-section" data-animate="fade-up" data-delay="100">
-                <h2 class="story-heading">About Me</h2>
-                <div class="story-text">
-                    <p>Award-winning author of 8 novels, John Doe has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p>
-                </div>
-            </div>
-
-            <div class="story-section" data-animate="fade-up" data-delay="200">
-                <h2 class="story-heading">My Journey</h2>
-                <div class="story-text">
-                    <p>Award-winning author of 8 novels, John Doe has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p>
-                </div>
-            </div>
-
-            <div class="story-section" data-animate="fade-up" data-delay="300">
-                <h2 class="story-heading">Location</h2>
-                <div class="story-text">
-                    <p>Based in India</p>
-                </div>
+        <div class="newspaper-content-split">
+            <div class="newspaper-article-column">
+                <div class="newspaper-drop-cap">A</div>
+                <p class="newspaper-article-text">Award-winning author of 8 novels, Arjun has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p>
+                
+                <p class="newspaper-article-text" style="margin-top: 2rem;">Award-winning author of 8 novels, John Doe has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p>
+                
+                <p class="newspaper-article-text" style="margin-top: 2rem;">Based in India</p>
             </div>
             
+            <div class="newspaper-author-box">
+                
+                <img src="assets/images/author.png" alt="Arjun Singh" class="newspaper-author-img">
+                
+                <div class="newspaper-author-placeholder" style="display: none;">AS</div>
+                
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <h3 class="footer-name">Arjun Singh</h3>
-                    <p class="footer-tagline">Bestselling Action Author</p>
-                </div>
-                
-                <div class="footer-social">
-                    
-                    <a href="https://twitter.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
-                    </a>
-
-                    <a href="https://www.facebook.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
-                    </a>
-
-                    <a href="https://instagram.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
-                    </a>
-
-                    <a href="https://www.linkedin.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
-                    </a>
-                    
-                </div>
-                
+    <footer class="newspaper-footer">
+        <div class="newspaper-footer-content">
+            <div class="newspaper-footer-left">
+                <h3 class="newspaper-footer-name">ARJUN SINGH</h3>
+                <p class="newspaper-footer-tag">Bestselling Action Author</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Arjun Singh. All rights reserved.</p>
+            <div class="newspaper-footer-right">
+                <p class="newspaper-connect-label">CONNECT</p>
+                <div class="newspaper-social-grid">
+                    
+                    <a href="https://twitter.com/arjunfrisky" target="_blank" rel="noopener" class="newspaper-social-link">TWITTER →</a>
+                    <a href="https://www.facebook.com/arjun" target="_blank" rel="noopener" class="newspaper-social-link">FACEBOOK →</a>
+                    <a href="https://instagram.com/arjunfrisky" target="_blank" rel="noopener" class="newspaper-social-link">INSTAGRAM →</a>
+                    <a href="https://www.linkedin.com/arjun" target="_blank" rel="noopener" class="newspaper-social-link">GOODREADS →</a>
+                    
+                </div>
             </div>
         </div>
+        <div class="newspaper-footer-line"></div>
+        <p class="newspaper-copyright">© 2025 ARJUN SINGH • ALL RIGHTS RESERVED • EST. 2025</p>
     </footer>
 
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-

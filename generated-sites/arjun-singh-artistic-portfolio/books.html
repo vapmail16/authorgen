@@ -3,131 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books - Arjun Singh</title>
+    <title>Gallery - Arjun Singh</title>
     <meta name="description" content="Explore all books by Arjun Singh">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav-bar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Arjun Singh</a>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">About</a>
-                <a href="books.html" class="nav-link active">Books</a>
-                <a href="story.html" class="nav-link">My Story</a>
-                
-                <a href="blogs.html" class="nav-link">Blog</a>
-                
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <nav class="artistic-nav">
+        <div class="artistic-nav-container">
+            <a href="index.html" class="artistic-nav-btn">Home</a>
+            <a href="index.html#about" class="artistic-nav-btn">About</a>
+            <a href="books.html" class="artistic-nav-btn active">Gallery</a>
+            <a href="story.html" class="artistic-nav-btn">Journey</a>
+            <a href="contact.html" class="artistic-nav-btn">Contact</a>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="page-header-background"></div>
-        <div class="container">
-            <h1 class="page-title" data-animate="fade-up">My Books</h1>
-            <p class="page-subtitle" data-animate="fade-up" data-delay="100">Explore my literary journey</p>
-        </div>
-    </section>
-
-    <!-- Books Collection -->
-    <section class="section books-collection">
-        <div class="container">
+    <!-- Literary Gallery -->
+    <section class="artistic-gallery-section">
+        <h2 class="artistic-gradient-title">Literary Gallery</h2>
+        <p class="artistic-gallery-subtitle">Complete collection of published works</p>
+        <div class="artistic-books-grid">
             
-            <div class="books-list">
-                
-                <div class="book-item" data-animate="fade-left" data-delay="000">
-                    <div class="book-item-cover">
-                        
-                        <img src="assets/images/book-1.jpg" alt="Summer Dreams" class="book-cover-large">
-                        
-                        <div class="book-cover-placeholder-large">Summer Dreams</div>
-                        
-                    </div>
-                    <div class="book-item-content">
-                        <h2 class="book-item-title">Summer Dreams</h2>
-                        <p class="book-item-date">Published: 1/1/1999</p>
-                        <p class="book-item-description">There's something magical about the ritual of coffee and writing. Many of my best ideas come during quiet morning hours with a perfect cup of coffee.</p>
-                        
-                        <div class="book-item-links">
-                            <span class="buy-label">Available at:</span>
-                        </div>
+            <div class="artistic-book-card-side">
+                <div class="artistic-book-cover-side">
+                    <img src="assets/images/book-1.jpg" alt="Summer Dreams" class="artistic-cover-img">
+                    <div class="artistic-cover-placeholder-grad" style="display: none;">Featured</div>
+                </div>
+                <div class="artistic-book-info-side">
+                    <div class="artistic-spotlight-badge">SPOTLIGHT</div>
+                    <h3 class="artistic-book-title-side">Summer Dreams</h3>
+                    <p class="artistic-book-year-side">1/1/1999</p>
+                    <p class="artistic-book-desc-side">There's something magical about the ritual of coffee and writing. Many of my best ideas come during quiet morning hours with a perfect cup of coffee.</p>
+                    <div class="artistic-purchase-links-side">
+                        <a href="" target="_blank" rel="noopener" class="artistic-purchase-link-btn">↗</a>
                     </div>
                 </div>
-                <div class="book-item" data-animate="fade-left" data-delay="100">
-                    <div class="book-item-cover">
-                        
-                        <img src="assets/images/book-2.jpg" alt="Winter Tales" class="book-cover-large">
-                        
-                        <div class="book-cover-placeholder-large">Winter Tales</div>
-                        
-                    </div>
-                    <div class="book-item-content">
-                        <h2 class="book-item-title">Winter Tales</h2>
-                        <p class="book-item-date">Published: 2/2/1999</p>
-                        <p class="book-item-description">A thrilling new adventure exploring themes of courage, friendship, and second chances. This book represents a new direction incorporating magical realism with contemporary themes.</p>
-                        
-                        <div class="book-item-links">
-                            <span class="buy-label">Available at:</span>
-
-                        </div>
-                        
-                    </div>
-                </div>
-                
             </div>
-
+            
+            <div class="artistic-book-card-side">
+                <div class="artistic-book-cover-side">
+                    <img src="assets/images/book-2.jpg" alt="Winter Tales" class="artistic-cover-img">
+                    <div class="artistic-cover-placeholder-grad" style="display: none;">Featured</div>
+                </div>
+                <div class="artistic-book-info-side">
+                    <div class="artistic-spotlight-badge">SPOTLIGHT</div>
+                    <h3 class="artistic-book-title-side">Winter Tales</h3>
+                    <p class="artistic-book-year-side">2/2/1999</p>
+                    <p class="artistic-book-desc-side">A thrilling new adventure exploring themes of courage, friendship, and second chances. This book represents a new direction incorporating magical realism with contemporary themes.</p>
+                    <div class="artistic-purchase-links-side">
+                        <a href="" target="_blank" rel="noopener" class="artistic-purchase-link-btn">↗</a>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <h3 class="footer-name">Arjun Singh</h3>
-                    <p class="footer-tagline">Bestselling Action Author</p>
-                </div>
-                
-                <div class="footer-social">
+    <footer class="artistic-footer">
+        <div class="artistic-footer-content">
+            <div class="artistic-footer-left">
+                <h3 class="artistic-footer-name-gradient">Arjun Singh</h3>
+                <p class="artistic-footer-tag">Bestselling Action Author</p>
+                <a href="contact.html" class="artistic-footer-btn">Start a Conversation</a>
+            </div>
+            <div class="artistic-footer-right">
+                <p class="artistic-connect-label">CONNECT WITH ME</p>
+                <div class="artistic-social-grid">
                     
-                    <a href="https://twitter.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
-                    </a>
-
-                    <a href="https://www.facebook.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
-                    </a>
-
-                    <a href="https://instagram.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
-                    </a>
-
-                    <a href="https://www.linkedin.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
-                    </a>
+                    <a href="https://twitter.com/arjunfrisky" target="_blank" rel="noopener" class="artistic-social-grid-btn">Twitter</a>
+                    <a href="https://instagram.com/arjunfrisky" target="_blank" rel="noopener" class="artistic-social-grid-btn">Instagram</a>
+                    <a href="https://www.facebook.com/arjun" target="_blank" rel="noopener" class="artistic-social-grid-btn">Facebook</a>
+                    <a href="https://www.linkedin.com/arjun" target="_blank" rel="noopener" class="artistic-social-grid-btn">Goodreads</a>
                     
                 </div>
-                
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Arjun Singh. All rights reserved.</p>
-            </div>
+        </div>
+        <div class="artistic-footer-bottom">
+            <p class="artistic-copyright">© 2025 Arjun Singh. Crafted with creativity.</p>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-

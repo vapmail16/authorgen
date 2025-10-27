@@ -4,93 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Arjun Singh</title>
-    <meta name="description" content="Read Arjun Singh's latest blog posts">
+    <meta name="description" content="Thoughts and insights from Arjun Singh">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav-bar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Arjun Singh</a>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">About</a>
-                <a href="books.html" class="nav-link">Books</a>
-                <a href="story.html" class="nav-link">My Story</a>
-                <a href="blogs.html" class="nav-link active">Blog</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <!-- Masthead -->
+    <header class="newspaper-masthead">
+        <div class="newspaper-top-bar">
+            <div class="newspaper-vol">VOL. 2025</div>
+            <div class="newspaper-date">MONDAY, OCTOBER 27, 2025</div>
         </div>
+        <h1 class="newspaper-main-title">Arjun Singh</h1>
+        <p class="newspaper-tagline">Bestselling Action Author</p>
+        <div class="newspaper-lines"></div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="newspaper-nav">
+        <div class="newspaper-nav-container">
+            <a href="index.html" class="newspaper-nav-tab">FEATURE STORY</a>
+            <a href="books.html" class="newspaper-nav-tab">LITERARY WORKS</a>
+            <a href="story.html" class="newspaper-nav-tab">EDITORIAL</a>
+            <a href="index.html#life" class="newspaper-nav-tab">LIFE & ARTS</a>
+            <a href="contact.html" class="newspaper-nav-tab">CONTACT</a>
+        </div>
+        <div class="newspaper-divider-lines"></div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="page-header-background"></div>
-        <div class="container">
-            <h1 class="page-title" data-animate="fade-up">Blog</h1>
-            <p class="page-subtitle" data-animate="fade-up" data-delay="100">Thoughts, stories, and insights</p>
+    <!-- Blog Section -->
+    <section class="newspaper-works-section">
+        <div class="newspaper-works-header">
+            <div class="newspaper-divider-lines"></div>
+            <h2 class="newspaper-works-title">BLOG & ESSAYS</h2>
+            <p class="newspaper-works-subtitle">THOUGHTS & INSIGHTS</p>
+            <div class="newspaper-divider-thin"></div>
         </div>
-    </section>
 
-    <!-- Blog Content -->
-    <section class="section blog-content">
-        <div class="container">
-            
-            <div class="blog-info" data-animate="fade-up">
-                <p>Subscribe to my blog via <a href="https://medium.com/@kartscrut" class="text-link" target="_blank" rel="noopener">RSS feed</a></p>
+        <div class="newspaper-biblio-content">
+            <div class="newspaper-biblio-featured">
+                <div class="newspaper-featured-box" style="height: 300px; display: flex; align-items: center; justify-content: center; font-size: 1rem; opacity: 0.7;">COMING SOON</div>
             </div>
-            
-            <div class="empty-state" data-animate="fade-up">
-                <p>Blog posts coming soon...</p>
+            <div class="newspaper-biblio-details">
+                <p class="newspaper-biblio-label">LATEST POSTS</p>
+                <p class="newspaper-biblio-description" style="margin-top: 2rem;">Blog posts and essays coming soon. Stay tuned for updates!</p>
+                <div class="newspaper-biblio-line"></div>
+                <p class="newspaper-purchase-label">RSS FEED</p>
+                <a href="https://medium.com/@kartscrut" target="_blank" rel="noopener" class="newspaper-purchase-btn">Subscribe via RSS ↗</a>
             </div>
-            
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <h3 class="footer-name">Arjun Singh</h3>
-                    <p class="footer-tagline">Bestselling Action Author</p>
-                </div>
-                
-                <div class="footer-social">
-                    
-                    <a href="https://twitter.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
-                    </a>
-
-                    <a href="https://www.facebook.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
-                    </a>
-
-                    <a href="https://instagram.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
-                    </a>
-
-                    <a href="https://www.linkedin.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
-                    </a>
-                    
-                </div>
-                
+    <footer class="newspaper-footer">
+        <div class="newspaper-footer-content">
+            <div class="newspaper-footer-left">
+                <h3 class="newspaper-footer-name">ARJUN SINGH</h3>
+                <p class="newspaper-footer-tag">Bestselling Action Author</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Arjun Singh. All rights reserved.</p>
+            <div class="newspaper-footer-right">
+                <p class="newspaper-connect-label">CONNECT</p>
+                <div class="newspaper-social-grid">
+                    
+                    <a href="https://twitter.com/arjunfrisky" target="_blank" rel="noopener" class="newspaper-social-link">TWITTER →</a>
+                    <a href="https://www.facebook.com/arjun" target="_blank" rel="noopener" class="newspaper-social-link">FACEBOOK →</a>
+                    <a href="https://instagram.com/arjunfrisky" target="_blank" rel="noopener" class="newspaper-social-link">INSTAGRAM →</a>
+                    <a href="https://www.linkedin.com/arjun" target="_blank" rel="noopener" class="newspaper-social-link">GOODREADS →</a>
+                    
+                </div>
             </div>
         </div>
+        <div class="newspaper-footer-line"></div>
+        <p class="newspaper-copyright">© 2025 ARJUN SINGH • ALL RIGHTS RESERVED • EST. 2025</p>
     </footer>
 
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-

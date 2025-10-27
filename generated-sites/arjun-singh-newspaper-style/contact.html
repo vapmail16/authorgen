@@ -8,154 +8,89 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav-bar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Arjun Singh</a>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">About</a>
-                <a href="books.html" class="nav-link">Books</a>
-                <a href="story.html" class="nav-link">My Story</a>
-                
-                <a href="blogs.html" class="nav-link">Blog</a>
-                
-                <a href="contact.html" class="nav-link active">Contact</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <!-- Masthead -->
+    <header class="newspaper-masthead">
+        <div class="newspaper-top-bar">
+            <div class="newspaper-vol">VOL. 2025</div>
+            <div class="newspaper-date">MONDAY, OCTOBER 27, 2025</div>
         </div>
+        <h1 class="newspaper-main-title">Arjun Singh</h1>
+        <p class="newspaper-tagline">Bestselling Action Author</p>
+        <div class="newspaper-lines"></div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="newspaper-nav">
+        <div class="newspaper-nav-container">
+            <a href="index.html" class="newspaper-nav-tab">FEATURE STORY</a>
+            <a href="books.html" class="newspaper-nav-tab">LITERARY WORKS</a>
+            <a href="story.html" class="newspaper-nav-tab">EDITORIAL</a>
+            <a href="index.html#life" class="newspaper-nav-tab">LIFE & ARTS</a>
+            <a href="contact.html" class="newspaper-nav-tab active">CONTACT</a>
+        </div>
+        <div class="newspaper-divider-lines"></div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="page-header-background"></div>
-        <div class="container">
-            <h1 class="page-title" data-animate="fade-up">Get In Touch</h1>
-            <p class="page-subtitle" data-animate="fade-up" data-delay="100">I'd love to hear from you</p>
+    <!-- Contact Section -->
+    <section class="newspaper-works-section">
+        <div class="newspaper-works-header">
+            <h2 class="newspaper-works-title">CONTACT</h2>
+            <p class="newspaper-works-subtitle">GET IN TOUCH</p>
+            <div class="newspaper-divider-thin"></div>
         </div>
-    </section>
 
-    <!-- Contact Content -->
-    <section class="section contact-content">
-        <div class="container-narrow">
-            <div class="contact-grid">
-                <div class="contact-info" data-animate="fade-up">
-                    <h2 class="contact-heading">Let's Connect</h2>
-                    <p class="contact-text">Whether you have a question about my books, want to discuss a project, or just want to say hello, feel free to reach out.</p>
-
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <svg class="icon"><use href="assets/icons/icons.svg#mail"></use></svg>
-                        </div>
-                        <div class="contact-item-content">
-                            <h3>Email</h3>
-                            <a href="mailto:arjun87743@gmail.com" class="text-link">arjun87743@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <svg class="icon"><use href="assets/icons/icons.svg#map-pin"></use></svg>
-                        </div>
-                        <div class="contact-item-content">
-                            <h3>Location</h3>
-                            <p>India</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-social">
-                        <h3>Follow Me</h3>
-                        <div class="social-links">
-                            
-                            <a href="https://twitter.com/arjunfrisky" class="social-link-large" target="_blank" rel="noopener">
-                                <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
-                                <span>Twitter</span>
-                            </a>
-
-                            <a href="https://www.facebook.com/arjun" class="social-link-large" target="_blank" rel="noopener">
-                                <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
-                                <span>Facebook</span>
-                            </a>
-
-                            <a href="https://instagram.com/arjunfrisky" class="social-link-large" target="_blank" rel="noopener">
-                                <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
-                                <span>Instagram</span>
-                            </a>
-
-                            <a href="https://www.linkedin.com/arjun" class="social-link-large" target="_blank" rel="noopener">
-                                <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
-                                <span>LinkedIn</span>
-                            </a>
-                            
-                        </div>
-                    </div>
+        <div class="newspaper-biblio-content">
+            <div class="newspaper-biblio-featured">
+                <div class="newspaper-featured-box">CONTACT INFORMATION</div>
+            </div>
+            <div class="newspaper-biblio-details">
+                <p class="newspaper-biblio-label">EMAIL</p>
+                <h3 class="newspaper-biblio-book-title">arjun87743@gmail.com</h3>
+                <div class="newspaper-biblio-line"></div>
+                
+                <p class="newspaper-biblio-label">LOCATION</p>
+                <p class="newspaper-biblio-published">Based in India</p>
+                <div class="newspaper-biblio-line"></div>
+                
+                <p class="newspaper-purchase-label">SOCIAL CONNECT</p>
+                <div class="newspaper-purchase-buttons">
                     
-                </div>
-
-                <div class="contact-form-wrapper" data-animate="fade-up" data-delay="200">
-                    <form class="contact-form" action="https://formspree.io/f/arjun87743@gmail.com" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="6" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                    </form>
+                    <a href="https://twitter.com/arjunfrisky" target="_blank" rel="noopener" class="newspaper-purchase-btn">Twitter</a>
+                    <a href="https://www.facebook.com/arjun" target="_blank" rel="noopener" class="newspaper-purchase-btn">Facebook</a>
+                    <a href="https://instagram.com/arjunfrisky" target="_blank" rel="noopener" class="newspaper-purchase-btn">Instagram</a>
+                    <a href="https://www.linkedin.com/arjun" target="_blank" rel="noopener" class="newspaper-purchase-btn">LinkedIn</a>
+                    
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <h3 class="footer-name">Arjun Singh</h3>
-                    <p class="footer-tagline">Bestselling Action Author</p>
-                </div>
-                
-                <div class="footer-social">
-                    
-                    <a href="https://twitter.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
-                    </a>
-
-                    <a href="https://www.facebook.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
-                    </a>
-
-                    <a href="https://instagram.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
-                    </a>
-
-                    <a href="https://www.linkedin.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
-                    </a>
-                    
-                </div>
-                
+    <footer class="newspaper-footer">
+        <div class="newspaper-footer-content">
+            <div class="newspaper-footer-left">
+                <h3 class="newspaper-footer-name">ARJUN SINGH</h3>
+                <p class="newspaper-footer-tag">Bestselling Action Author</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Arjun Singh. All rights reserved.</p>
+            <div class="newspaper-footer-right">
+                <p class="newspaper-connect-label">CONNECT</p>
+                <div class="newspaper-social-grid">
+                    
+                    <a href="https://twitter.com/arjunfrisky" target="_blank" rel="noopener" class="newspaper-social-link">TWITTER →</a>
+                    <a href="https://www.facebook.com/arjun" target="_blank" rel="noopener" class="newspaper-social-link">FACEBOOK →</a>
+                    <a href="https://instagram.com/arjunfrisky" target="_blank" rel="noopener" class="newspaper-social-link">INSTAGRAM →</a>
+                    <a href="https://www.linkedin.com/arjun" target="_blank" rel="noopener" class="newspaper-social-link">GOODREADS →</a>
+                    
+                </div>
             </div>
         </div>
+        <div class="newspaper-footer-line"></div>
+        <p class="newspaper-copyright">© 2025 ARJUN SINGH • ALL RIGHTS RESERVED • EST. 2025</p>
     </footer>
 
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-

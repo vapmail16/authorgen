@@ -94,7 +94,11 @@ body {
     border-right: none;
 }
 
-.newspaper-nav-tab:hover,
+.newspaper-nav-tab:hover {
+    background: var(--newspaper-black);
+    color: var(--newspaper-white);
+}
+
 .newspaper-nav-tab.active {
     background: var(--newspaper-black);
     color: var(--newspaper-white);
@@ -287,10 +291,23 @@ body {
 }
 
 .newspaper-book-title-style {
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 0.5rem;
     font-size: 2rem;
     font-weight: 700;
     font-family: 'Playfair Display', serif;
+}
+
+.newspaper-book-date {
+    padding: 0 1.5rem 0.5rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--newspaper-gray);
+}
+
+.newspaper-book-description {
+    padding: 0 1.5rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 .newspaper-book-line {
