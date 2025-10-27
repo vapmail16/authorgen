@@ -60,8 +60,10 @@ body {
     transition: color 0.2s;
 }
 
-.retro-nav-links a:hover {
+.retro-nav-links a:hover,
+.retro-nav-links a.active {
     color: var(--text-darker);
+    font-weight: 600;
 }
 
 /* Hero Section with Frame */

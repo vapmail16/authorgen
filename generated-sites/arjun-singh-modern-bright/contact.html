@@ -4,158 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Arjun Singh</title>
-    <meta name="description" content="Get in touch with Arjun Singh">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav-bar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Arjun Singh</a>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">About</a>
-                <a href="books.html" class="nav-link">Books</a>
-                <a href="story.html" class="nav-link">My Story</a>
-                
-                <a href="blogs.html" class="nav-link">Blog</a>
-                
-                <a href="contact.html" class="nav-link active">Contact</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+    <nav class="bright-header">
+        <div class="bright-header-content">
+            <a href="index.html" class="bright-logo">Arjun Singh</a>
+            <div class="bright-nav">
+                <a href="index.html">About</a>
+                <a href="books.html">Books</a>
+                <a href="story.html">My Story</a>
+                <a href="blogs.html">Blog</a>
+                <a href="contact.html" class="active">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="page-header-background"></div>
-        <div class="container">
-            <h1 class="page-title" data-animate="fade-up">Get In Touch</h1>
-            <p class="page-subtitle" data-animate="fade-up" data-delay="100">I'd love to hear from you</p>
+    <section class="bright-about">
+        <div class="bright-about-content">
+            <h2 class="bright-about-title">Get In Touch</h2>
+            <p class="bright-about-text">I'd love to hear from you. Feel free to reach out for book inquiries or just to connect.</p>
         </div>
     </section>
 
-    <!-- Contact Content -->
-    <section class="section contact-content">
-        <div class="container-narrow">
-            <div class="contact-grid">
-                <div class="contact-info" data-animate="fade-up">
-                    <h2 class="contact-heading">Let's Connect</h2>
-                    <p class="contact-text">Whether you have a question about my books, want to discuss a project, or just want to say hello, feel free to reach out.</p>
-
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <svg class="icon"><use href="assets/icons/icons.svg#mail"></use></svg>
-                        </div>
-                        <div class="contact-item-content">
-                            <h3>Email</h3>
-                            <a href="mailto:arjun87743@gmail.com" class="text-link">arjun87743@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <svg class="icon"><use href="assets/icons/icons.svg#map-pin"></use></svg>
-                        </div>
-                        <div class="contact-item-content">
-                            <h3>Location</h3>
-                            <p>India</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-social">
-                        <h3>Follow Me</h3>
-                        <div class="social-links">
-                            
-                            <a href="https://twitter.com/arjunfrisky" class="social-link-large" target="_blank" rel="noopener">
-                                <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
-                                <span>Twitter</span>
-                            </a>
-
-                            <a href="https://www.facebook.com/arjun" class="social-link-large" target="_blank" rel="noopener">
-                                <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
-                                <span>Facebook</span>
-                            </a>
-
-                            <a href="https://instagram.com/arjunfrisky" class="social-link-large" target="_blank" rel="noopener">
-                                <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
-                                <span>Instagram</span>
-                            </a>
-
-                            <a href="https://www.linkedin.com/arjun" class="social-link-large" target="_blank" rel="noopener">
-                                <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
-                                <span>LinkedIn</span>
-                            </a>
-                            
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <div class="contact-form-wrapper" data-animate="fade-up" data-delay="200">
-                    <form class="contact-form" action="https://formspree.io/f/arjun87743@gmail.com" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="6" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <h3 class="footer-name">Arjun Singh</h3>
-                    <p class="footer-tagline">Bestselling Action Author</p>
-                </div>
-                
-                <div class="footer-social">
-                    
-                    <a href="https://twitter.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
-                    </a>
-
-                    <a href="https://www.facebook.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
-                    </a>
-
-                    <a href="https://instagram.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
-                    </a>
-
-                    <a href="https://www.linkedin.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
-                    </a>
-                    
-                </div>
-                
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Arjun Singh. All rights reserved.</p>
-            </div>
+    <footer class="bright-footer-section">
+        <div class="bright-footer-content">
+            <h3 class="bright-footer-name">Arjun Singh</h3>
+            <p class="bright-footer-tagline">Bestselling Action Author</p>
         </div>
     </footer>
-
-    <script src="assets/js/main.js"></script>
 </body>
 </html>
-

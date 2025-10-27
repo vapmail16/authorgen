@@ -4,112 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Story - Arjun Singh</title>
-    <meta name="description" content="Learn about Arjun Singh's journey">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav-bar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Arjun Singh</a>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">About</a>
-                <a href="books.html" class="nav-link">Books</a>
-                <a href="story.html" class="nav-link active">My Story</a>
-                
-                <a href="blogs.html" class="nav-link">Blog</a>
-                
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+    <nav class="elegant-header">
+        <div class="elegant-header-content">
+            <div class="elegant-header-name">ARJUN SINGH</div>
+            <div class="elegant-nav-menu">
+                <a href="index.html">ABOUT</a>
+                <a href="books.html">WORKS</a>
+                <a href="story.html" class="active">REVIEWS</a>
+                <a href="contact.html">CONTACT</a>
             </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="page-header-background"></div>
-        <div class="container">
-            <h1 class="page-title" data-animate="fade-up">My Story</h1>
-            <p class="page-subtitle" data-animate="fade-up" data-delay="100">The journey that shaped me</p>
-        </div>
-    </section>
-
-    <!-- Story Content -->
-    <section class="section story-content">
-        <div class="container-narrow">
-            
-            <div class="story-image" data-animate="fade-up">
-                <img src="assets/images/author.png" alt="Arjun Singh">
+    <div class="elegant-layout">
+        <aside class="elegant-sidebar">
+            <div class="elegant-profile-box">
+                <img src="assets/images/author.png" alt="Arjun Singh" class="elegant-avatar-img">
             </div>
+            <h1 class="elegant-sidebar-name">Arjun Singh</h1>
+            <p class="elegant-sidebar-tagline">Bestselling Action Author</p>
+        </aside>
 
-            <div class="story-section" data-animate="fade-up" data-delay="100">
-                <h2 class="story-heading">About Me</h2>
-                <div class="story-text">
-                    <p>Award-winning author of 8 novels, John Doe has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p>
+        <main class="elegant-main">
+            <section class="elegant-about-section">
+                <div class="elegant-section-header">
+                    <div class="elegant-icon-box">✎</div>
+                    <h2 class="elegant-section-title">My Story</h2>
                 </div>
-            </div>
-
-            <div class="story-section" data-animate="fade-up" data-delay="200">
-                <h2 class="story-heading">My Journey</h2>
-                <div class="story-text">
-                    <p>Award-winning author of 8 novels, John Doe has captivated readers worldwide with compelling storytelling and rich character development. His works have been translated into 20 languages and sold over 3 million copies globally.</p>
+                <div class="elegant-timeline">
+                    <div class="elegant-timeline-dot"></div>
+                    <p class="elegant-timeline-text">Crafting stories that resonate and inspire readers worldwide. My journey as a writer began with a simple passion for storytelling.</p>
                 </div>
-            </div>
-
-            <div class="story-section" data-animate="fade-up" data-delay="300">
-                <h2 class="story-heading">Location</h2>
-                <div class="story-text">
-                    <p>Based in India</p>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <h3 class="footer-name">Arjun Singh</h3>
-                    <p class="footer-tagline">Bestselling Action Author</p>
-                </div>
-                
-                <div class="footer-social">
-                    
-                    <a href="https://twitter.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
-                    </a>
-
-                    <a href="https://www.facebook.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
-                    </a>
-
-                    <a href="https://instagram.com/arjunfrisky" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
-                    </a>
-
-                    <a href="https://www.linkedin.com/arjun" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
-                    </a>
-                    
-                </div>
-                
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Arjun Singh. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
+            </section>
+        </main>
+    </div>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-

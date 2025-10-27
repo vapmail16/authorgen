@@ -64,6 +64,7 @@ body {
 .bright-nav a:hover,
 .bright-nav a.active {
     color: var(--orange-bright);
+    font-weight: 600;
 }
 
 .bright-nav a.active::after {

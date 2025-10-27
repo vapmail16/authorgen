@@ -64,7 +64,8 @@ body {
     transition: color 0.2s;
 }
 
-.tech-menu a:hover {
+.tech-menu a:hover,
+.tech-menu a.active {
     color: var(--neon-cyan);
 }
 

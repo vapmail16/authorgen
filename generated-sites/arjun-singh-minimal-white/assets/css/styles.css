@@ -56,8 +56,10 @@ body {
     transition: color 0.2s;
 }
 
-.nav-links-minimal a:hover {
+.nav-links-minimal a:hover,
+.nav-links-minimal a.active {
     color: var(--text-gray);
+    font-weight: 500;
 }
 
 /* Hero Section */

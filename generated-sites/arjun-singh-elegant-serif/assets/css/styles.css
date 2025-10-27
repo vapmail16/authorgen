@@ -63,6 +63,7 @@ body {
 .elegant-nav-link:hover,
 .elegant-nav-link.active {
     color: var(--gold-accent);
+    font-weight: 600;
 }
 
 /* Layout - Split Screen */
