@@ -1,17 +1,10 @@
 FROM nginx:alpine
 
-# Copy all generated sites (you can specify which one to serve)
-COPY generated-sites/ /usr/share/nginx/html/
+# Set which site to deploy (default to latest)
+ARG SITE=arjun-singh-2025-10-16
 
-# Create nginx config to serve the first available site
-RUN echo 'server { \
-    listen 80; \
-    root /usr/share/nginx/html; \
-    index index.html; \
-    location / { \
-        try_files $uri $uri/ =404; \
-    } \
-}' > /etc/nginx/conf.d/default.conf
+# Copy the entire site directory
+COPY generated-sites/${SITE} /usr/share/nginx/html
 
 EXPOSE 80
 
