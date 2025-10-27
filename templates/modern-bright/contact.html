@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - {{authorName}}</title>
+    <meta name="description" content="Get in touch with {{authorName}}">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">{{authorName}}</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">About</a>
+                <a href="books.html" class="nav-link">Books</a>
+                <a href="story.html" class="nav-link">My Story</a>
+                {{#if showBlogs}}
+                <a href="blogs.html" class="nav-link">Blog</a>
+                {{/if}}
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-background"></div>
+        <div class="container">
+            <h1 class="page-title" data-animate="fade-up">Get In Touch</h1>
+            <p class="page-subtitle" data-animate="fade-up" data-delay="100">I'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="section contact-content">
+        <div class="container-narrow">
+            <div class="contact-grid">
+                <div class="contact-info" data-animate="fade-up">
+                    <h2 class="contact-heading">Let's Connect</h2>
+                    <p class="contact-text">Whether you have a question about my books, want to discuss a project, or just want to say hello, feel free to reach out.</p>
+                    
+                    {{#if contactEmail}}
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg class="icon"><use href="assets/icons/icons.svg#mail"></use></svg>
+                        </div>
+                        <div class="contact-item-content">
+                            <h3>Email</h3>
+                            <a href="mailto:{{contactEmail}}" class="text-link">{{contactEmail}}</a>
+                        </div>
+                    </div>
+                    {{/if}}
+
+                    {{#if location}}
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg class="icon"><use href="assets/icons/icons.svg#map-pin"></use></svg>
+                        </div>
+                        <div class="contact-item-content">
+                            <h3>Location</h3>
+                            <p>{{location}}</p>
+                        </div>
+                    </div>
+                    {{/if}}
+
+                    {{#if hasSocial}}
+                    <div class="contact-social">
+                        <h3>Follow Me</h3>
+                        <div class="social-links">
+                            {{#if social.twitter}}
+                            <a href="https://twitter.com/{{social.twitter}}" class="social-link-large" target="_blank" rel="noopener">
+                                <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
+                                <span>Twitter</span>
+                            </a>
+                            {{/if}}
+                            {{#if social.facebook}}
+                            <a href="{{social.facebook}}" class="social-link-large" target="_blank" rel="noopener">
+                                <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
+                                <span>Facebook</span>
+                            </a>
+                            {{/if}}
+                            {{#if social.instagram}}
+                            <a href="https://instagram.com/{{social.instagram}}" class="social-link-large" target="_blank" rel="noopener">
+                                <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
+                                <span>Instagram</span>
+                            </a>
+                            {{/if}}
+                            {{#if social.linkedin}}
+                            <a href="{{social.linkedin}}" class="social-link-large" target="_blank" rel="noopener">
+                                <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
+                                <span>LinkedIn</span>
+                            </a>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+
+                <div class="contact-form-wrapper" data-animate="fade-up" data-delay="200">
+                    <form class="contact-form" action="https://formspree.io/f/{{contactEmail}}" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3 class="footer-name">{{authorName}}</h3>
+                    <p class="footer-tagline">{{tagline}}</p>
+                </div>
+                {{#if hasSocial}}
+                <div class="footer-social">
+                    {{#if social.twitter}}
+                    <a href="https://twitter.com/{{social.twitter}}" class="social-link" target="_blank" rel="noopener">
+                        <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
+                    </a>
+                    {{/if}}
+                    {{#if social.facebook}}
+                    <a href="{{social.facebook}}" class="social-link" target="_blank" rel="noopener">
+                        <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
+                    </a>
+                    {{/if}}
+                    {{#if social.instagram}}
+                    <a href="https://instagram.com/{{social.instagram}}" class="social-link" target="_blank" rel="noopener">
+                        <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
+                    </a>
+                    {{/if}}
+                    {{#if social.linkedin}}
+                    <a href="{{social.linkedin}}" class="social-link" target="_blank" rel="noopener">
+                        <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
+                    </a>
+                    {{/if}}
+                </div>
+                {{/if}}
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{currentYear}} {{authorName}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
