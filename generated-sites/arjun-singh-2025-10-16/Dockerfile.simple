@@ -1,8 +1,12 @@
 FROM nginx:alpine
 
+# Copy everything
 COPY . /usr/share/nginx/html
+
+# Default nginx config is good enough
 
 EXPOSE 80
 
+# Keep nginx running
 CMD ["nginx", "-g", "daemon off;"]
 
