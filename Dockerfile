@@ -1,15 +1,15 @@
 FROM nginx:alpine
 
-# Set which site to deploy (default to latest)
-ARG SITE=arjun-singh-2025-10-16
-# Available sites:
-# - arjun-singh-artistic-portfolio
-# - arjun-singh-elegant-serif
-# - arjun-singh-minimal-white
-# - arjun-singh-modern-bright
-# - arjun-singh-newspaper-style
-# - arjun-singh-retro-vintage
-# - arjun-singh-tech-dark
+# Set which site to deploy (default to minimal-white)
+ARG SITE=arjun-singh-minimal-white
+# Available template-specific sites:
+# - arjun-singh-artistic-portfolio (Modern vibrant gradients)
+# - arjun-singh-elegant-serif (Classical elegance)
+# - arjun-singh-minimal-white (Clean minimal design)
+# - arjun-singh-modern-bright (Vibrant modern)
+# - arjun-singh-newspaper-style (Editorial newspaper)
+# - arjun-singh-retro-vintage (Vintage charm)
+# - arjun-singh-tech-dark (High-tech dark)
 
 # Copy the entire site directory
 COPY generated-sites/${SITE} /usr/share/nginx/html
