@@ -54,45 +54,45 @@ Each template must include ALL these sections with unique styling:
 
 ## Template-Specific Requirements
 
-### minimal-white
+### Website 1 - minimal-white
 - Ultra clean, minimal design
 - Lots of white space
 - Subtle borders
 - Soft colors
 - Professional look
 
-### retro-vintage
+### Website 2 -  retro-vintage
 - Warm sepia tones
 - Vintage frames for photos
 - Decorative elements
 - Old-world aesthetic
 
-### tech-dark
+###  Website 3 - tech-dark
 - Dark background (#0A0F1A)
 - Neon cyan accents (#00FFFF)
 - Tech-inspired layout
 - Monospace elements
 - Modern grid system
 
-### modern-bright
+### Website 4 -  modern-bright
 - Bold split layouts
 - Vibrant colors
 - Energetic design
 - Clean geometric shapes
 
-### elegant-serif
+###  Website 5 - elegant-serif
 - Formal, traditional
 - Serif typography
 - Sidebar or split layout
 - Refined colors
 
-### newspaper-style
+###  Website 6 - newspaper-style
 - Multi-column layout
 - Black and white
 - Editorial design
 - Typography-focused
 
-### artistic-portfolio
+###  Website 7 - artistic-portfolio
 - Asymmetric layouts
 - Creative grid
 - Gallery-like feel
