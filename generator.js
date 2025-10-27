@@ -123,8 +123,13 @@ function main() {
         
         // Determine output directory
         const authorSlug = authorData.authorName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-        const timestamp = new Date().toISOString().split('T')[0];
-        const finalOutputDir = outputDir || path.join(__dirname, 'generated-sites', `${authorSlug}-${timestamp}`);
+        
+        // Use template name in directory name if not default template
+        const folderName = templateName === 'black-chrome' 
+            ? authorSlug 
+            : `${authorSlug}-${templateName}`;
+        
+        const finalOutputDir = outputDir || path.join(__dirname, 'generated-sites', folderName);
         
         // Load template-specific generator
         console.log(`\n🎨 Using template: ${templateName}`);
