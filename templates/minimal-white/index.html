@@ -8,179 +8,123 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav-bar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">{{authorName}}</a>
-            <div class="nav-menu" id="navMenu">
+    <!-- Minimal Navigation -->
+    <nav class="minimal-nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">{{authorName}}</a>
+            <div class="nav-links">
                 <a href="index.html" class="nav-link active">About</a>
                 <a href="books.html" class="nav-link">Books</a>
-                <a href="story.html" class="nav-link">My Story</a>
+                <a href="story.html" class="nav-link">Story</a>
                 {{#if showBlogs}}
                 <a href="blogs.html" class="nav-link">Blog</a>
                 {{/if}}
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-background"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-image-wrapper" data-animate="fade-up">
-                    {{#if authorPhoto}}
-                    <img src="{{authorPhoto}}" alt="{{authorName}}" class="hero-image">
-                    {{/if}}
-                    {{#unless authorPhoto}}
-                    <div class="hero-image-placeholder">{{authorInitials}}</div>
-                    {{/unless}}
-                </div>
-                <div class="hero-text">
-                    <h1 class="hero-title" data-animate="fade-up" data-delay="100">{{authorName}}</h1>
-                    <p class="hero-tagline" data-animate="fade-up" data-delay="200">{{tagline}}</p>
-                    <p class="hero-bio" data-animate="fade-up" data-delay="300">{{authorBio}}</p>
-                    <div class="hero-buttons" data-animate="fade-up" data-delay="400">
-                        <a href="books.html" class="btn btn-primary">Explore My Books</a>
-                        <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
-                    </div>
-                </div>
+    <!-- Full-Width Hero -->
+    <header class="hero-banner">
+        <div class="hero-content">
+            {{#if authorPhoto}}
+            <div class="author-avatar">
+                <img src="{{authorPhoto}}" alt="{{authorName}}">
             </div>
+            {{/if}}
+            <h1>{{authorName}}</h1>
+            <p class="tagline">{{tagline}}</p>
         </div>
-        <div class="scroll-indicator">
-            <span></span>
-        </div>
-    </section>
+    </header>
 
-    {{#if showCurrentWork}}
-    <!-- Current Work Section -->
-    <section class="section current-work">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-subtitle">What I'm Working On</span>
-                <h2 class="section-title">{{currentWorkTitle}}</h2>
-            </div>
-            <div class="current-work-content" data-animate="fade-up" data-delay="100">
-                <p>{{currentWorkDescription}}</p>
-            </div>
-        </div>
-    </section>
-    {{/if}}
-
-    {{#if hasBooks}}
-    <!-- Featured Books Section -->
-    <section class="section featured-books">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-subtitle">My Work</span>
-                <h2 class="section-title">Featured Books</h2>
-            </div>
-            <div class="books-grid">
-                {{#each featuredBooks}}
-                <div class="book-card" data-animate="fade-up" data-delay="{{@index}}00">
-                    <div class="book-cover-wrapper">
-                        {{#if cover}}
-                        <img src="{{cover}}" alt="{{title}}" class="book-cover">
-                        {{else}}
-                        <div class="book-cover-placeholder">{{title}}</div>
-                        {{/if}}
-                    </div>
-                    <div class="book-info">
-                        <h3 class="book-title">{{title}}</h3>
-                        <p class="book-date">{{publishDate}}</p>
-                        <p class="book-description">{{description}}</p>
-                        {{#if buyLinks}}
-                        <div class="book-links">
-                            {{#each buyLinks}}
-                            <a href="{{url}}" class="book-link" target="_blank" rel="noopener">{{name}}</a>
-                            {{/each}}
-                        </div>
-                        {{/if}}
-                    </div>
-                </div>
-                {{/each}}
-            </div>
-            <div class="section-footer" data-animate="fade-up">
-                <a href="books.html" class="btn btn-outline">View All Books</a>
-            </div>
-        </div>
-    </section>
-    {{/if}}
-
-    {{#if hasHobbies}}
-    <!-- Hobbies & Interests Section -->
-    <section class="section hobbies">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-subtitle">Beyond Writing</span>
-                <h2 class="section-title">Hobbies & Interests</h2>
-            </div>
-            <div class="hobbies-grid">
-                {{#each hobbies}}
-                <div class="hobby-card" data-animate="scale-up" data-delay="{{@index}}00">
-                    <div class="hobby-icon">
-                        <svg class="icon">
-                            <use href="assets/icons/icons.svg#{{icon}}"></use>
-                        </svg>
-                    </div>
-                    <h3 class="hobby-title">{{title}}</h3>
-                    <p class="hobby-description">{{description}}</p>
-                </div>
-                {{/each}}
-            </div>
-        </div>
-    </section>
-    {{/if}}
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <h3 class="footer-name">{{authorName}}</h3>
-                    <p class="footer-tagline">{{tagline}}</p>
-                </div>
-                {{#if hasSocial}}
-                <div class="footer-social">
-                    {{#if social.twitter}}
-                    <a href="https://twitter.com/{{social.twitter}}" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
-                    </a>
-                    {{/if}}
-                    {{#if social.facebook}}
-                    <a href="{{social.facebook}}" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
-                    </a>
-                    {{/if}}
-                    {{#if social.instagram}}
-                    <a href="https://instagram.com/{{social.instagram}}" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
-                    </a>
-                    {{/if}}
-                    {{#if social.linkedin}}
-                    <a href="{{social.linkedin}}" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
-                    </a>
-                    {{/if}}
-                </div>
+    <!-- Main Content - Single Column -->
+    <main class="content-main">
+        <!-- Bio Section -->
+        <section class="content-section bio-section">
+            <div class="section-inner">
+                <h2>About</h2>
+                <p>{{authorBio}}</p>
+                {{#if extendedBio}}
+                <div class="extended-bio">{{{extendedBio}}}</div>
                 {{/if}}
             </div>
-            <div class="footer-bottom">
-                <p>&copy; {{currentYear}} {{authorName}}. All rights reserved.</p>
+        </section>
+
+        {{#if hasBooks}}
+        <!-- Books Section - Horizontal Cards -->
+        <section class="content-section books-section">
+            <div class="section-inner">
+                <h2>My Books</h2>
+                <div class="books-horizontal">
+                    {{#each featuredBooks}}
+                    <div class="book-item-minimal">
+                        {{#if cover}}
+                        <img src="{{cover}}" alt="{{title}}" class="book-img">
+                        {{/if}}
+                        <div class="book-info-minimal">
+                            <h3>{{title}}</h3>
+                            <p class="book-date-minimal">{{publishDate}}</p>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <a href="books.html" class="link-more">View All Books →</a>
             </div>
+        </section>
+        {{/if}}
+
+        {{#if showCurrentWork}}
+        <!-- Current Work -->
+        <section class="content-section work-section">
+            <div class="section-inner">
+                <h2>Current Work</h2>
+                <h3>{{currentWorkTitle}}</h3>
+                <p>{{currentWorkDescription}}</p>
+            </div>
+        </section>
+        {{/if}}
+
+        {{#if hasHobbies}}
+        <!-- Hobbies - Simple List -->
+        <section class="content-section hobbies-section">
+            <div class="section-inner">
+                <h2>Beyond Writing</h2>
+                <div class="hobbies-list">
+                    {{#each hobbies}}
+                    <div class="hobby-item-minimal">
+                        <h4>{{title}}</h4>
+                        <p>{{description}}</p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+        {{/if}}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-minimal">
+        <div class="footer-content">
+            <p>&copy; {{currentYear}} {{authorName}}</p>
+            {{#if hasSocial}}
+            <div class="social-minimal">
+                {{#if social.twitter}}
+                <a href="https://twitter.com/{{social.twitter}}" target="_blank">Twitter</a>
+                {{/if}}
+                {{#if social.instagram}}
+                <a href="https://instagram.com/{{social.instagram}}" target="_blank">Instagram</a>
+                {{/if}}
+                {{#if social.linkedin}}
+                <a href="{{social.linkedin}}" target="_blank">LinkedIn</a>
+                {{/if}}
+            </div>
+            {{/if}}
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-

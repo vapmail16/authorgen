@@ -96,6 +96,189 @@ a:hover {
     padding: 0 2rem;
 }
 
+/* Minimal Navigation */
+.minimal-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--color-border);
+    transition: var(--transition-smooth);
+}
+
+.nav-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-text);
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-text);
+}
+
+/* Hero Banner */
+.hero-banner {
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    background: var(--color-bg);
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    font-weight: 300;
+}
+
+.author-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Main Content */
+.content-main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.content-section {
+    margin-bottom: 4rem;
+}
+
+.section-inner h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.5rem;
+}
+
+.section-inner p {
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+}
+
+/* Books Horizontal */
+.books-horizontal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.book-item-minimal {
+    text-align: center;
+}
+
+.book-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.book-info-minimal h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.book-date-minimal {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.link-more {
+    display: inline-block;
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+/* Hobbies List */
+.hobbies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hobby-item-minimal h4 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer Minimal */
+.footer-minimal {
+    border-top: 1px solid var(--color-border);
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.social-minimal {
+    margin-top: 1rem;
+}
+
+.social-minimal a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.social-minimal a:hover {
+    color: var(--color-accent);
+}
+
 /* Navigation Bar */
 .nav-bar {
     position: fixed;
@@ -103,7 +286,7 @@ a:hover {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-border);
     transition: var(--transition-smooth);

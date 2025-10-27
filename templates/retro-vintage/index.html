@@ -4,183 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{authorName}} - Author</title>
-    <meta name="description" content="{{tagline}}">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav-bar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">{{authorName}}</a>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link active">About</a>
-                <a href="books.html" class="nav-link">Books</a>
-                <a href="story.html" class="nav-link">My Story</a>
-                {{#if showBlogs}}
-                <a href="blogs.html" class="nav-link">Blog</a>
-                {{/if}}
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-background"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-image-wrapper" data-animate="fade-up">
-                    {{#if authorPhoto}}
-                    <img src="{{authorPhoto}}" alt="{{authorName}}" class="hero-image">
+    <div class="retro-wrapper">
+        <nav class="retro-nav">
+            <div class="retro-nav-inner">
+                <a href="index.html" class="retro-logo">{{authorName}}</a>
+                <div class="retro-menu">
+                    <a href="index.html">About</a>
+                    <a href="books.html">Books</a>
+                    <a href="story.html">Story</a>
+                    {{#if showBlogs}}
+                    <a href="blogs.html">Blog</a>
                     {{/if}}
-                    {{#unless authorPhoto}}
-                    <div class="hero-image-placeholder">{{authorInitials}}</div>
-                    {{/unless}}
-                </div>
-                <div class="hero-text">
-                    <h1 class="hero-title" data-animate="fade-up" data-delay="100">{{authorName}}</h1>
-                    <p class="hero-tagline" data-animate="fade-up" data-delay="200">{{tagline}}</p>
-                    <p class="hero-bio" data-animate="fade-up" data-delay="300">{{authorBio}}</p>
-                    <div class="hero-buttons" data-animate="fade-up" data-delay="400">
-                        <a href="books.html" class="btn btn-primary">Explore My Books</a>
-                        <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
-                    </div>
+                    <a href="contact.html">Contact</a>
                 </div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <span></span>
-        </div>
-    </section>
+        </nav>
 
-    {{#if showCurrentWork}}
-    <!-- Current Work Section -->
-    <section class="section current-work">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-subtitle">What I'm Working On</span>
-                <h2 class="section-title">{{currentWorkTitle}}</h2>
+        <header class="retro-hero">
+            <div class="retro-hero-inner">
+                {{#if authorPhoto}}
+                <div class="retro-photo-frame">
+                    <img src="{{authorPhoto}}" alt="{{authorName}}">
+                </div>
+                {{/if}}
+                <h1 class="retro-title">{{authorName}}</h1>
+                <p class="retro-subtitle">{{tagline}}</p>
+                <div class="retro-divider"></div>
             </div>
-            <div class="current-work-content" data-animate="fade-up" data-delay="100">
-                <p>{{currentWorkDescription}}</p>
-            </div>
-        </div>
-    </section>
-    {{/if}}
+        </header>
 
-    {{#if hasBooks}}
-    <!-- Featured Books Section -->
-    <section class="section featured-books">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-subtitle">My Work</span>
-                <h2 class="section-title">Featured Books</h2>
-            </div>
-            <div class="books-grid">
-                {{#each featuredBooks}}
-                <div class="book-card" data-animate="fade-up" data-delay="{{@index}}00">
-                    <div class="book-cover-wrapper">
-                        {{#if cover}}
-                        <img src="{{cover}}" alt="{{title}}" class="book-cover">
-                        {{else}}
-                        <div class="book-cover-placeholder">{{title}}</div>
-                        {{/if}}
-                    </div>
-                    <div class="book-info">
-                        <h3 class="book-title">{{title}}</h3>
-                        <p class="book-date">{{publishDate}}</p>
-                        <p class="book-description">{{description}}</p>
-                        {{#if buyLinks}}
-                        <div class="book-links">
-                            {{#each buyLinks}}
-                            <a href="{{url}}" class="book-link" target="_blank" rel="noopener">{{name}}</a>
-                            {{/each}}
+        <main class="retro-content">
+            <article class="retro-bio">
+                <h2>About the Author</h2>
+                <p>{{authorBio}}</p>
+                {{#if extendedBio}}
+                <div class="retro-extended">{{{extendedBio}}}</div>
+                {{/if}}
+            </article>
+
+            {{#if hasBooks}}
+            <section class="retro-books">
+                <h2 class="retro-section-title">Published Works</h2>
+                <div class="retro-books-grid">
+                    {{#each featuredBooks}}
+                    <div class="retro-book">
+                        <div class="retro-book-cover">
+                            {{#if cover}}
+                            <img src="{{cover}}" alt="{{title}}">
+                            {{else}}
+                            <div class="retro-placeholder">{{title}}</div>
+                            {{/if}}
                         </div>
-                        {{/if}}
+                        <div class="retro-book-info">
+                            <h3>{{title}}</h3>
+                            <p class="retro-date">{{publishDate}}</p>
+                        </div>
                     </div>
+                    {{/each}}
                 </div>
-                {{/each}}
-            </div>
-            <div class="section-footer" data-animate="fade-up">
-                <a href="books.html" class="btn btn-outline">View All Books</a>
-            </div>
-        </div>
-    </section>
-    {{/if}}
+            </section>
+            {{/if}}
 
-    {{#if hasHobbies}}
-    <!-- Hobbies & Interests Section -->
-    <section class="section hobbies">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-subtitle">Beyond Writing</span>
-                <h2 class="section-title">Hobbies & Interests</h2>
-            </div>
-            <div class="hobbies-grid">
-                {{#each hobbies}}
-                <div class="hobby-card" data-animate="scale-up" data-delay="{{@index}}00">
-                    <div class="hobby-icon">
-                        <svg class="icon">
-                            <use href="assets/icons/icons.svg#{{icon}}"></use>
-                        </svg>
-                    </div>
-                    <h3 class="hobby-title">{{title}}</h3>
-                    <p class="hobby-description">{{description}}</p>
-                </div>
-                {{/each}}
-            </div>
-        </div>
-    </section>
-    {{/if}}
+            {{#if showCurrentWork}}
+            <section class="retro-work">
+                <h2>Currently Working On</h2>
+                <h3>{{currentWorkTitle}}</h3>
+                <p>{{currentWorkDescription}}</p>
+            </section>
+            {{/if}}
+        </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <h3 class="footer-name">{{authorName}}</h3>
-                    <p class="footer-tagline">{{tagline}}</p>
-                </div>
-                {{#if hasSocial}}
-                <div class="footer-social">
-                    {{#if social.twitter}}
-                    <a href="https://twitter.com/{{social.twitter}}" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#twitter"></use></svg>
-                    </a>
-                    {{/if}}
-                    {{#if social.facebook}}
-                    <a href="{{social.facebook}}" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#facebook"></use></svg>
-                    </a>
-                    {{/if}}
-                    {{#if social.instagram}}
-                    <a href="https://instagram.com/{{social.instagram}}" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#instagram"></use></svg>
-                    </a>
-                    {{/if}}
-                    {{#if social.linkedin}}
-                    <a href="{{social.linkedin}}" class="social-link" target="_blank" rel="noopener">
-                        <svg class="icon"><use href="assets/icons/icons.svg#linkedin"></use></svg>
-                    </a>
-                    {{/if}}
-                </div>
-                {{/if}}
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; {{currentYear}} {{authorName}}. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
+        <footer class="retro-footer">
+            <p>&copy; {{currentYear}} {{authorName}}. All rights reserved.</p>
+        </footer>
+    </div>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-
