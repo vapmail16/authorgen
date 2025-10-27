@@ -19,6 +19,19 @@ All documentation is in the [`docs/`](./docs/) folder.
 - 🚀 Deploy Anywhere (Netlify, Vercel, GitHub Pages)
 - 📦 Self-Contained Sites
 - 🎯 No Dependencies
+- 🐳 Docker Support
+
+## 🐳 Docker Usage
+
+Each generated site includes a Dockerfile. To build and run:
+
+```bash
+cd generated-sites/arjun-singh
+docker build -t author-site .
+docker run -p 8080:80 author-site
+```
+
+Visit `http://localhost:8080`
 
 ## 📖 Full Documentation
 
